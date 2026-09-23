@@ -52,15 +52,14 @@ h1,h2,h3,p{margin-top:0}
 .hero-rail{position:absolute;right:24px;top:70px;bottom:70px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:9px;font:700 9px/1 "Barlow Condensed",sans-serif}
 .hero-rail i{display:block;width:2px;flex:1;background:linear-gradient(var(--red) 0 16%,rgba(255,255,255,.45) 16% 100%)}
 
-.why{min-height:360px;position:relative;overflow:hidden}
-.why-grid{display:grid;grid-template-columns:1.08fr .83fr;gap:92px;padding-top:58px;padding-bottom:61px;position:relative;z-index:2}
+.why{min-height:360px;position:relative;overflow:hidden;background:var(--cream)}
+.why-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:86px;padding-top:58px;padding-bottom:61px;position:relative;z-index:2}
 .why h2,.system h2,.journey h2,.facility h2,.coaches h2,.culture h2,.final-cta h2{font:400 clamp(45px,4.6vw,68px)/.93 Anton,Impact,sans-serif;letter-spacing:.003em;margin:13px 0 0}
-.why-copy{padding-top:22px}
+.why-copy{padding-top:22px;padding-right:300px;position:relative;z-index:3}
 .why-copy p{font-size:13px;line-height:1.55;max-width:420px}
 .why-copy strong{display:block;margin-top:22px;color:var(--red);font:800 20px/1.02 "Barlow Condensed",sans-serif}
-.why-photo{position:absolute;right:50px;bottom:0;width:280px;height:245px;background:url('https://images.pexels.com/photos/28886526/pexels-photo-28886526.jpeg?auto=compress&cs=tinysrgb&w=900') center 26%/cover no-repeat;filter:grayscale(1) contrast(1.08);opacity:.98;z-index:1}
-.ghost-22{position:absolute;right:3px;top:35px;font:900 160px/1 "Barlow Condensed",sans-serif;color:rgba(0,0,0,.035)}
-.side-note{position:absolute;right:29px;bottom:32px;font:800 14px/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase;z-index:3;border-bottom:4px solid var(--red);padding-bottom:9px}
+.why-photo{position:absolute;right:26px;bottom:0;width:334px;height:290px;background:url('/assets/why-kid-exact.jpg') center bottom/contain no-repeat;z-index:2}
+.ghost-22,.side-note{display:none}
 
 .system{padding:58px 0 56px}
 .system-head{display:grid;grid-template-columns:1.25fr .68fr;gap:90px;align-items:start}
@@ -157,7 +156,10 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .menu-button{display:block}
   .nav-cta{display:none}
   .why-grid,.system-head,.journey-grid,.coaches-head,.culture-grid,.final-grid{grid-template-columns:1fr}
-  .why-photo,.side-note{display:none}
+  .why{padding-bottom:275px}
+  .why-copy{padding-right:0}
+  .why-photo{display:block;right:50%;transform:translateX(50%);width:334px;height:290px}
+  .side-note{display:none}
   .pillars{grid-template-columns:1fr 1fr}
   .pillars article:nth-child(3){border-left:0;padding-left:0}
   .path{grid-template-columns:1fr;gap:17px}
