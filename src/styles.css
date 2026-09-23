@@ -186,3 +186,13 @@ footer nav a,footer span{font:700 11px/1 "Barlow Condensed",sans-serif;text-tran
   .footer-inner{flex-direction:column;align-items:flex-start}
   footer nav{flex-wrap:wrap}
 }
+
+.brand{display:flex;align-items:center}
+.brand-logo{display:block;width:142px;height:auto;object-fit:contain}
+.brand-logo-large{width:min(270px,100%);margin-left:auto}
+.footer-logo{width:118px}
+@media (max-width:680px){
+  .brand-logo{width:118px}
+  .brand-logo-large{width:200px;margin-left:0}
+  .footer-logo{width:108px}
+}
