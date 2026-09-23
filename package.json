@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "vite --host 0.0.0.0",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
-  },
-  "devDependencies": {
-    "vite": "^7.1.7"
+    "build": "rm -rf dist && mkdir -p dist/src dist/assets && cp index.html dist/index.html && cp src/styles.css dist/src/styles.css && cp src/main.js dist/src/main.js && cp -R public/assets/. dist/assets/"
   }
 }
