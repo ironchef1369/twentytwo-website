@@ -1,0 +1,188 @@
+:root{
+  --red:#e4212e;
+  --black:#090b0c;
+  --ink:#101214;
+  --cream:#f1efe9;
+  --white:#fff;
+  --muted:#b9b9b9;
+  --line:rgba(255,255,255,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--ink);font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 56px));margin:0 auto}
+.announcement{height:28px;background:var(--red);color:#fff;text-align:center;font:700 11px/28px "Barlow Condensed",sans-serif;letter-spacing:.08em}
+.announcement span{margin:0 8px}
+.site-header{height:74px;background:#0b0d0e;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(28px,calc((100vw - 1180px)/2));position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,.08)}
+.brand-word{font:800 31px/1 "Barlow Condensed",sans-serif;letter-spacing:-.04em;color:var(--red);text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff}
+.brand-word.large{font-size:58px}
+.desktop-nav{display:flex;gap:38px}
+.desktop-nav a{font:700 13px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.04em}
+.header-actions{display:flex;align-items:center;gap:18px}
+.menu-button{display:none;background:none;border:0;color:#fff;font-size:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 20px;text-transform:uppercase;font:700 13px/1 "Barlow Condensed",sans-serif;letter-spacing:.04em;border:1px solid transparent;transition:.2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-outline{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(0,0,0,.12)}
+.btn.small{padding:13px 26px}
+
+.hero{min-height:720px;position:relative;color:#fff;overflow:hidden;display:flex;align-items:center}
+.hero-media{position:absolute;inset:0;background:
+  radial-gradient(circle at 72% 35%,rgba(255,255,255,.08),transparent 22%),
+  linear-gradient(90deg,#0a0c0d 0%,rgba(10,12,13,.92) 28%,rgba(10,12,13,.22) 62%,rgba(10,12,13,.7) 100%),
+  url('https://ochooplegends.com/wp-content/uploads/2024/12/MG_1927-Enhanced-NR.jpeg') center/cover no-repeat;
+filter:saturate(.65) contrast(1.08)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.42))}
+.hero-content{position:relative;z-index:3;padding:82px 0 90px}
+.eyebrow,.section-kicker{font:800 13px/1 "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.eyebrow span{margin:0 8px}
+.hero h1,.section-light h2,.section-dark h2,.culture h2,.final-cta h2{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.005em;margin:15px 0 20px;line-height:.92}
+.hero h1{font-size:clamp(64px,7vw,108px);max-width:760px}
+.hero h1 span,.facility h2 span{color:var(--red)}
+.hero p{max-width:560px;font-size:17px;line-height:1.55;margin:0 0 14px}
+.hero-detail{font-size:14px!important;color:#d8d8d8}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.script-mark{position:absolute;right:7%;top:12%;z-index:4;font:400 50px/1 "Permanent Marker",cursive;transform:rotate(-8deg);opacity:.88}
+.culture-note{position:absolute;right:4.5%;bottom:40px;z-index:4;font:400 27px/1 "Permanent Marker",cursive;transform:rotate(-7deg)}
+.hero-22{position:absolute;right:-15px;bottom:-125px;font:800 420px/1 "Barlow Condensed",sans-serif;color:rgba(255,255,255,.035);z-index:1}
+
+.section-light{background:var(--cream);position:relative}
+.section-dark{background:linear-gradient(135deg,#0c0e0f,#121617);color:#fff}
+.statement{padding:125px 0 135px;overflow:hidden}
+.statement-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:110px;align-items:end;position:relative;z-index:2}
+.statement h2{font-size:clamp(52px,5.5vw,82px)}
+.statement-copy{padding-bottom:8px}
+.statement-copy p{font-size:15px;line-height:1.72;max-width:500px}
+.statement-copy strong{display:block;color:var(--red);font:800 26px/1.02 "Barlow Condensed",sans-serif;margin-top:28px}
+.ghost-22{position:absolute;right:-38px;bottom:-95px;font:800 360px/1 "Barlow Condensed",sans-serif;color:rgba(0,0,0,.035)}
+
+.system{padding:120px 0 125px}
+.section-head,.journey-top,.coaches-head{display:grid;grid-template-columns:1.25fr .75fr;gap:100px;align-items:start}
+.section-head h2,.journey h2,.coaches h2{font-size:clamp(48px,4.7vw,72px)}
+.section-head>p,.journey-top>p,.coaches-head>div:last-child{font-size:14px;line-height:1.65;padding-top:16px}
+.red{color:var(--red)}
+.white{color:#fff}
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border-top:1px solid var(--line)}
+.pillar-grid article{padding:34px 30px 10px 0;position:relative;min-height:260px}
+.pillar-grid article+article{padding-left:30px;border-left:1px solid var(--line)}
+.pillar-num{font:800 42px/1 "Barlow Condensed",sans-serif;color:var(--red)}
+.pillar-icon{font-size:31px;opacity:.82;margin:8px 0 20px}
+.pillar-grid h3,.journey-grid h3,.coach-card h3{font:800 25px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:0 0 13px}
+.pillar-grid p,.journey-grid p{font-size:13px;line-height:1.55;color:#c4c4c4}
+
+.journey{padding:125px 0 135px}
+.journey-grid{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr 40px 1fr;margin-top:70px;align-items:start}
+.journey-grid article{padding-right:18px}
+.journey-grid span{font:700 18px/1 "Barlow Condensed",sans-serif}
+.journey-grid h3{font-size:27px;margin:8px 0}
+.journey-grid p{color:#333}
+.journey-arrow{font-size:34px;padding-top:24px}
+
+.facility{display:grid;grid-template-columns:1.08fr .92fr;min-height:650px}
+.facility-photo{background:
+linear-gradient(90deg,rgba(0,0,0,.05),rgba(0,0,0,.22)),
+url('https://ochooplegends.com/wp-content/uploads/2023/11/IMG_2349.jpeg') center/cover no-repeat;
+filter:saturate(.65)}
+.facility-copy{padding:95px max(40px,calc((100vw - 1180px)/2)) 90px 70px}
+.facility h2{font-size:clamp(48px,4.5vw,70px)}
+.facility-copy>p{font-size:14px;line-height:1.65;max-width:520px;margin-bottom:30px;color:#d3d3d3}
+.facility-list{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin-top:42px}
+.facility-list span{font:700 13px/1.25 "Barlow Condensed",sans-serif;text-transform:uppercase}
+
+.coaches{padding:125px 0 140px}
+.coaches-head a{font:800 14px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;display:inline-block;margin-top:18px}
+.coach-grid{display:grid;grid-template-columns:repeat(3,1fr) .9fr;gap:16px;margin-top:62px}
+.coach-card{height:390px;position:relative;overflow:hidden;background:
+linear-gradient(180deg,transparent 45%,rgba(0,0,0,.92) 100%),
+linear-gradient(135deg,#34383a,#111)}
+.coach-a{background:
+linear-gradient(180deg,transparent 45%,rgba(0,0,0,.92) 100%),
+url('https://ochooplegends.com/wp-content/uploads/2024/12/MG_1927-Enhanced-NR.jpeg') 48% 45%/240% auto no-repeat}
+.coach-b{background:
+linear-gradient(180deg,transparent 45%,rgba(0,0,0,.92) 100%),
+url('https://twentytwobasketball.com/wp-content/uploads/2025/02/Group1-1.png') 55% 45%/230% auto no-repeat}
+.coach-c{background:
+linear-gradient(180deg,transparent 45%,rgba(0,0,0,.92) 100%),
+url('https://ochooplegends.com/wp-content/uploads/2024/12/MG_1927-Enhanced-NR.jpeg') 70% 45%/240% auto no-repeat}
+.coach-card div{position:absolute;left:20px;right:20px;bottom:20px;color:#fff}
+.coach-card h3{font-size:22px;margin-bottom:3px}
+.coach-card p{margin:0;font-size:12px}
+.quote-card{background:#121516;color:#fff;padding:42px 28px;font:400 33px/1.02 "Permanent Marker",cursive;display:flex;align-items:center;justify-content:center;transform:rotate(.5deg)}
+
+.culture{position:relative;color:#fff;min-height:560px;display:flex;align-items:center;overflow:hidden}
+.culture-bg{position:absolute;inset:0;background:url('https://ochooplegends.com/wp-content/uploads/2024/12/MG_1927-Enhanced-NR.jpeg') center 60%/cover no-repeat;filter:grayscale(1) contrast(1.05)}
+.culture-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(165,0,12,.98),rgba(205,0,20,.84),rgba(105,0,8,.8))}
+.culture-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr .75fr;gap:130px;padding-top:100px;padding-bottom:100px;align-items:center}
+.culture h2{font-size:clamp(58px,6vw,90px)}
+.culture p{max-width:590px;font-size:14px;line-height:1.7}
+.culture-values{display:flex;flex-direction:column;gap:24px;border-left:1px solid rgba(255,255,255,.25);padding-left:46px}
+.culture-values span{font:800 24px/1 "Barlow Condensed",sans-serif}
+
+.up-next{padding:105px 0 120px}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+.next-card{min-height:160px;border:1px solid rgba(0,0,0,.16);padding:28px;display:flex;flex-direction:column;justify-content:flex-end;background:#e8e6df}
+.next-card span{font:800 30px/1 "Barlow Condensed",sans-serif}
+.next-card small{font-size:12px;margin:8px 0 22px}
+.next-card b{font:700 13px/1 "Barlow Condensed",sans-serif}
+.red-card{background:var(--red);color:#fff}
+
+.final-cta{position:relative;min-height:430px;color:#fff;display:flex;align-items:center;overflow:hidden}
+.final-bg{position:absolute;inset:0;background:url('https://ochooplegends.com/wp-content/uploads/2023/11/IMG_2349.jpeg') center/cover no-repeat;filter:grayscale(1)}
+.final-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,6,7,.98),rgba(4,6,7,.8),rgba(4,6,7,.93))}
+.final-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr .45fr;gap:80px;align-items:center;padding-top:70px;padding-bottom:70px}
+.final-cta h2{font-size:clamp(48px,5vw,78px)}
+.final-cta p{color:#d2d2d2}
+.final-brand{text-align:right}
+.final-brand p{font-size:12px;line-height:1.7}
+
+footer{background:#070809;color:#fff;border-top:1px solid rgba(255,255,255,.08);padding:28px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+footer nav{display:flex;gap:28px}
+footer nav a,footer span{font:700 11px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:#c4c4c4}
+
+@media (max-width:980px){
+  .desktop-nav{position:absolute;top:74px;left:0;right:0;background:#0b0d0e;display:none;flex-direction:column;padding:28px;gap:22px}
+  .desktop-nav.open{display:flex}
+  .menu-button{display:block}
+  .site-header{padding:0 24px}
+  .statement-grid,.section-head,.journey-top,.coaches-head,.culture-grid,.final-grid{grid-template-columns:1fr;gap:32px}
+  .pillar-grid{grid-template-columns:1fr 1fr}
+  .pillar-grid article:nth-child(3){border-left:0}
+  .journey-grid{grid-template-columns:1fr;gap:22px}
+  .journey-arrow{transform:rotate(90deg);padding:0}
+  .facility{grid-template-columns:1fr}
+  .facility-photo{min-height:430px}
+  .facility-copy{padding:70px 28px}
+  .coach-grid{grid-template-columns:1fr 1fr}
+  .culture-grid{gap:60px}
+  .culture-values{padding-left:0;border-left:0}
+}
+@media (max-width:680px){
+  .container{width:min(100% - 34px,1180px)}
+  .announcement{font-size:10px}
+  .site-header{height:64px}
+  .desktop-nav{top:64px}
+  .header-actions .small{display:none}
+  .brand-word{font-size:26px}
+  .hero{min-height:720px;align-items:flex-end}
+  .hero-content{padding:110px 0 70px}
+  .hero h1{font-size:58px}
+  .hero p{font-size:15px}
+  .script-mark{right:4%;top:15%;font-size:34px}
+  .culture-note{font-size:20px}
+  .statement,.system,.journey,.coaches,.up-next{padding:82px 0}
+  .statement-grid{gap:20px}
+  .statement h2,.section-head h2,.journey h2,.coaches h2{font-size:48px}
+  .pillar-grid{grid-template-columns:1fr}
+  .pillar-grid article,.pillar-grid article+article{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .facility-photo{min-height:320px}
+  .facility-list{grid-template-columns:1fr}
+  .coach-grid{grid-template-columns:1fr}
+  .coach-card{height:440px}
+  .next-grid{grid-template-columns:1fr}
+  .final-grid{gap:35px}
+  .final-brand{text-align:left}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  footer nav{flex-wrap:wrap}
+}
