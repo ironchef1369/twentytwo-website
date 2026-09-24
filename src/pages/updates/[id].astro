@@ -1,0 +1,58 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const updates = await getCollection("updates");
+  const now = new Date();
+
+  return updates.filter((entry) => entry.data.publishedAt <= now).map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"updates">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const published = entry.data.publishedAt.toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+---
+
+<BaseLayout title={`${entry.data.title} | Team TwentyTwo`} description={entry.data.summary}>
+  <main class="update-detail">
+    <header class="update-detail-hero">
+      {entry.data.image && (
+        <div class="update-detail-photo" style={`background-image:url('${entry.data.image}')`} role="img" aria-label={entry.data.imageAlt ?? ""}></div>
+      )}
+      <div class="update-detail-shade"></div>
+      <div class="shell update-detail-heading">
+        <a class="back-link" href="/updates/">← All updates</a>
+        <div class="update-meta light-meta">
+          <span>{entry.data.category}</span>
+          <time datetime={entry.data.publishedAt.toISOString()}>{published}</time>
+        </div>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.summary}</p>
+      </div>
+    </header>
+
+    <article class="update-article light">
+      <div class="article-shell">
+        <div class="article-body">
+          <Content />
+        </div>
+        {entry.data.ctaUrl && entry.data.ctaLabel && (
+          <a class="button red article-cta" href={entry.data.ctaUrl}>{entry.data.ctaLabel} <span>→</span></a>
+        )}
+      </div>
+    </article>
+  </main>
+</BaseLayout>

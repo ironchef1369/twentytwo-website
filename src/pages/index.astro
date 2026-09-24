@@ -1,39 +1,20 @@
 ---
-import "../styles.css";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import UpdateCard from "../components/UpdateCard.astro";
+
+const now = new Date();
+const updates = (await getCollection("updates"))
+  .filter((entry) =>
+    entry.data.featured &&
+    entry.data.publishedAt <= now &&
+    (!entry.data.expiresAt || entry.data.expiresAt >= now)
+  )
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0d0f" />
-  <title>Team TwentyTwo Basketball</title>
-  <meta name="description" content="Orange County youth club basketball focused on long-term player development, character, competition and family culture." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="topbar">2026–27 YOUTH TRYOUTS <span>→</span> VIEW SCHEDULE <button aria-label="Dismiss">×</button></div>
-
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Team TwentyTwo home">
-      <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#teams">Teams</a>
-      <a href="#development">Development</a>
-      <a href="#coaches">Coaches</a>
-      <a href="#facility">Facility</a>
-      <a href="#about">About</a>
-    </nav>
-    <div class="header-actions">
-      <a class="nav-cta" href="#tryouts">Tryouts</a>
-      <button class="menu-button" aria-label="Open menu">☰</button>
-    </div>
-  </header>
-
+<BaseLayout>
   <main id="top">
     <section class="hero">
       <div class="hero-photo"></div>
@@ -190,11 +171,12 @@ import "../styles.css";
 
     <section class="up-next light" id="tryouts">
       <div class="shell">
-        <div class="kicker">/ UP NEXT AT TWENTYTWO</div>
+        <div class="updates-section-head">
+          <div class="kicker">/ LATEST AT TWENTYTWO</div>
+          <a href="/updates/">View all updates →</a>
+        </div>
         <div class="next-grid">
-          <a class="next-card" href="#"><div class="next-img tryout-img"></div><div><h3>TRYOUTS</h3><p>2026–27 Youth Teams</p><span>View schedule →</span></div></a>
-          <a class="next-card" href="#"><div class="next-img prep-img"></div><div><h3>OC PREP</h3><p>Developmental basketball</p><span>Learn more →</span></div></a>
-          <a class="next-card" href="#"><div class="next-img training-img"></div><div><h3>TRAINING</h3><p>Skills + player development</p><span>View training →</span></div></a>
+          {updates.map((entry) => <UpdateCard entry={entry} compact />)}
         </div>
       </div>
     </section>
@@ -220,24 +202,4 @@ import "../styles.css";
       <div class="final-script">WE ARE<br>THE CULTURE.</div>
     </section>
   </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
-      <nav>
-        <a href="#teams">Teams</a>
-        <a href="#development">Development</a>
-        <a href="#coaches">Coaches</a>
-        <a href="#facility">Facility</a>
-        <a href="#about">About</a>
-      </nav>
-      <div class="social">◎ ◻</div>
-      <span>BETTER PLAYERS. BETTER PEOPLE.</span>
-    </div>
-  </footer>
-
-  <script>
-    import "../main.js";
-  </script>
-</body>
-</html>
+</BaseLayout>
