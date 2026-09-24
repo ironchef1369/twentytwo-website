@@ -1,42 +1,26 @@
 ---
-import "../styles.css";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import UpdateCard from "../components/UpdateCard.astro";
+
+const now = new Date();
+const updates = (await getCollection("updates"))
+  .filter((entry) =>
+    entry.data.featured &&
+    entry.data.publishedAt <= now &&
+    (!entry.data.expiresAt || entry.data.expiresAt >= now)
+  )
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0d0f" />
-  <title>Team TwentyTwo Basketball</title>
-  <meta name="description" content="Orange County youth club basketball focused on long-term player development, character, competition and family culture." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="topbar">2026–27 YOUTH TRYOUTS <span>→</span> VIEW SCHEDULE <button aria-label="Dismiss">×</button></div>
-
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Team TwentyTwo home">
-      <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#teams">Teams</a>
-      <a href="#development">Development</a>
-      <a href="#coaches">Coaches</a>
-      <a href="#facility">Facility</a>
-      <a href="#about">About</a>
-    </nav>
-    <div class="header-actions">
-      <a class="nav-cta" href="#tryouts">Tryouts</a>
-      <button class="menu-button" aria-label="Open menu">☰</button>
-    </div>
-  </header>
-
+<BaseLayout>
   <main id="top">
     <section class="hero">
       <div class="hero-photo"></div>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="/assets/hero-team22.mp4" type="video/mp4">
+      </video>
       <div class="hero-shade"></div>
       <div class="hero-inner shell">
         <div class="hero-copy">
@@ -53,6 +37,29 @@ import "../styles.css";
       <img class="hero-script-logo" src="/assets/logo-script.webp" alt="Twenty2 script logo">
       <div class="hero-culture">WE ARE<br>THE CULTURE.</div>
       <div class="hero-rail"><span>01</span><i></i><small>H2</small></div>
+    </section>
+
+    <section class="affiliations" aria-labelledby="affiliations-heading">
+      <div class="shell affiliations-inner">
+        <div class="affiliations-intro">
+          <div class="kicker red-text">/ AFFILIATIONS</div>
+          <h2 id="affiliations-heading">CONNECTED TO<br>THE GAME'S BEST.</h2>
+        </div>
+        <div class="affiliation-logos">
+          <div class="affiliation affiliation-sports-academy">
+            <img src="/assets/affiliations/sports-academy.webp" alt="Sports Academy">
+            <span>Affiliate program</span>
+          </div>
+          <div class="affiliation affiliation-nike">
+            <img src="/assets/affiliations/nike-swoosh.webp" alt="Nike">
+            <span>Nike program</span>
+          </div>
+          <div class="affiliation affiliation-eybl">
+            <img src="/assets/affiliations/nike-eybl.png" alt="Nike EYBL">
+            <span>Nike EYBL</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="why light" id="about">
@@ -110,7 +117,7 @@ import "../styles.css";
     <section class="journey light" id="teams">
       <div class="shell journey-grid">
         <div class="journey-title">
-          <div class="journey-kicker-row"><div class="kicker">/ PLAYER JOURNEY</div><img class="journey-flag-logo" src="/assets/logo-flag.webp" alt="" aria-hidden="true"></div>
+          <div class="journey-kicker-row"><div class="kicker">/ PLAYER JOURNEY</div><img class="journey-mark" src="/assets/logo-script.webp" alt="" aria-hidden="true"></div>
           <h2>ONE PROGRAM.<br>A LONGER JOURNEY.</h2>
         </div>
         <p class="journey-intro">Different players develop at different speeds. Our job isn't to rush the process. It's to give each athlete the environment, coaching and opportunities to keep moving forward.</p>
@@ -188,13 +195,41 @@ import "../styles.css";
       </div>
     </section>
 
+    <section class="social-proof" aria-labelledby="social-proof-heading">
+      <div class="shell social-proof-head">
+        <div>
+          <div class="kicker red-text">/ FROM THE GYM</div>
+          <h2 class="section-heading" id="social-proof-heading">THE WORK.<br>THE TEAM.<br>THE MOMENTS.</h2>
+        </div>
+        <div class="social-proof-copy">
+          <p>A look inside Team TwentyTwo—competition, development and the people building the culture every day.</p>
+          <a href="https://www.instagram.com/team_2wenty2/" target="_blank" rel="noreferrer">Follow @team_2wenty2 →</a>
+        </div>
+      </div>
+      <div class="social-grid">
+        <a class="social-shot social-shot-action" href="https://www.instagram.com/b_hahr/p/DdAxy9Xm20_/" target="_blank" rel="noreferrer" aria-label="View Team TwentyTwo game action on Instagram">
+          <img src="/assets/instagram/game-action.jpg" alt="Team TwentyTwo player handling the ball during a game" loading="lazy">
+        </a>
+        <a class="social-shot" href="https://www.instagram.com/team_2wenty2/p/DdP80b9tJgf/" target="_blank" rel="noreferrer" aria-label="View Team TwentyTwo team celebration on Instagram">
+          <img src="/assets/instagram/team-celebration.jpg" alt="Team TwentyTwo players and coach celebrating together" loading="lazy">
+        </a>
+        <a class="social-shot" href="https://www.instagram.com/team_2wenty2/p/DdADSuWStVS/" target="_blank" rel="noreferrer" aria-label="View Team TwentyTwo travel team on Instagram">
+          <img src="/assets/instagram/travel-team.jpg" alt="Team TwentyTwo travel team gathered after an event" loading="lazy">
+        </a>
+        <a class="social-shot" href="https://www.instagram.com/huddyg10/reel/DdVls0dKmvzLIurZHZMjzhtOywgTXGyZVRSYEM0/" target="_blank" rel="noreferrer" aria-label="View Team TwentyTwo youth team on Instagram">
+          <img src="/assets/instagram/youth-team.jpg" alt="Team TwentyTwo youth players and coaches together after a game" loading="lazy">
+        </a>
+      </div>
+    </section>
+
     <section class="up-next light" id="tryouts">
       <div class="shell">
-        <div class="kicker">/ UP NEXT AT TWENTYTWO</div>
+        <div class="updates-section-head">
+          <div class="kicker">/ LATEST AT TWENTYTWO</div>
+          <a href="/updates/">View all updates →</a>
+        </div>
         <div class="next-grid">
-          <a class="next-card" href="#"><div class="next-img tryout-img"></div><div><h3>TRYOUTS</h3><p>2026–27 Youth Teams</p><span>View schedule →</span></div></a>
-          <a class="next-card" href="#"><div class="next-img prep-img"></div><div><h3>OC PREP</h3><p>Developmental basketball</p><span>Learn more →</span></div></a>
-          <a class="next-card" href="#"><div class="next-img training-img"></div><div><h3>TRAINING</h3><p>Skills + player development</p><span>View training →</span></div></a>
+          {updates.map((entry) => <UpdateCard entry={entry} compact />)}
         </div>
       </div>
     </section>
@@ -220,24 +255,4 @@ import "../styles.css";
       <div class="final-script">WE ARE<br>THE CULTURE.</div>
     </section>
   </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
-      <nav>
-        <a href="#teams">Teams</a>
-        <a href="#development">Development</a>
-        <a href="#coaches">Coaches</a>
-        <a href="#facility">Facility</a>
-        <a href="#about">About</a>
-      </nav>
-      <div class="social">◎ ◻</div>
-      <span>BETTER PLAYERS. BETTER PEOPLE.</span>
-    </div>
-  </footer>
-
-  <script>
-    import "../main.js";
-  </script>
-</body>
-</html>
+</BaseLayout>

@@ -1,5 +1,11 @@
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.desktop-nav');
+const topbar = document.querySelector('.topbar');
+const topbarDismiss = topbar?.querySelector('button');
+
+topbarDismiss?.addEventListener('click', () => {
+  topbar.remove();
+});
 
 menuButton?.addEventListener('click', () => {
   nav.classList.toggle('open');

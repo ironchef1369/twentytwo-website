@@ -11,3 +11,50 @@ The homepage source is located at `src/pages/index.astro`.
 
 Pull requests are deployed as Cloudflare preview builds. The Wrangler
 `previews` setting in `wrangler.jsonc` is required by that preview command.
+
+## Visual style guide
+
+New sections should reuse the existing design language instead of introducing
+new typography or spacing patterns:
+
+- Use `.shell` for the standard content width.
+- Use `.kicker` for small red uppercase section labels.
+- Use `.section-heading` for new display headlines. It matches the site's Anton
+  typeface, condensed line height, uppercase treatment and responsive sizing.
+- Keep the black, cream and TwentyTwo red palette defined in `:root`.
+- Use Barlow Condensed for navigation, buttons, metadata and compact labels;
+  use Inter for body copy.
+- Favor square-cornered blocks, thin dividers and restrained red accents.
+
+## Publishing an update
+
+Add one Markdown file to `src/content/updates/`. Astro validates the frontmatter,
+adds featured entries to the homepage, and generates the archive and article URL.
+
+```md
+---
+title: Fall Tryout Schedule
+summary: Registration and schedule information for the upcoming season.
+publishedAt: 2026-10-01
+eventDate: 2026-10-18
+expiresAt: 2026-10-19
+category: Tryouts
+featured: true
+image: /assets/updates/fall-tryouts.jpg
+imageAlt: Players at a Team TwentyTwo tryout
+ctaLabel: Register now
+ctaUrl: https://example.com/register
+---
+
+Write the update here using Markdown.
+```
+
+Future-dated entries are excluded until a build on or after `publishedAt`.
+`expiresAt` removes an entry from the homepage while keeping it in the archive.
+Images may use a local `/assets/` path or a hosted HTTPS URL.
+Run `pnpm run check` before publishing a content pull request to catch missing
+or invalid frontmatter fields.
+
+The images in `public/assets/instagram/` are temporary Instagram-sized copies.
+Replace them with original exports using the same filenames when those files
+become available.
