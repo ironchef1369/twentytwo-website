@@ -231,3 +231,14 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .final-brand .main-wordmark{width:170px;height:auto;margin-left:0}
   .footer-inner>.main-wordmark{width:96px;height:auto}
 }
+
+/* Primary Team TwentyTwo wordmark — verified trimmed asset */
+.brand{display:flex;align-items:center;width:auto;height:auto;overflow:visible}
+.brand .main-wordmark{display:block;width:156px;height:auto;max-height:none;object-fit:contain;opacity:1;visibility:visible}
+.final-brand .main-wordmark{display:block;width:190px;height:auto;max-height:none;object-fit:contain;margin-left:auto;margin-bottom:10px;opacity:1;visibility:visible}
+.footer-inner>.main-wordmark{display:block;width:110px;height:auto;max-height:none;object-fit:contain;opacity:1;visibility:visible}
+@media (max-width:640px){
+  .brand .main-wordmark{width:136px}
+  .final-brand .main-wordmark{width:170px;margin-left:0}
+  .footer-inner>.main-wordmark{width:98px}
+}
