@@ -37,3 +37,4 @@ Write the update here using Markdown.
 
 Future-dated entries are excluded until a build on or after `publishedAt`.
 `expiresAt` removes an entry from the homepage while keeping it in the archive.
+Images may use a local `/assets/` path or a hosted HTTPS URL.
