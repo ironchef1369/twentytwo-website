@@ -52,14 +52,19 @@ h1,h2,h3,p{margin-top:0}
 .hero-rail{position:absolute;right:24px;top:70px;bottom:70px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:9px;font:700 9px/1 "Barlow Condensed",sans-serif}
 .hero-rail i{display:block;width:2px;flex:1;background:linear-gradient(var(--red) 0 16%,rgba(255,255,255,.45) 16% 100%)}
 
-.why{min-height:360px;position:relative;overflow:hidden;background:var(--cream)}
-.why-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:86px;padding-top:58px;padding-bottom:61px;position:relative;z-index:2}
+.why{position:relative;overflow:hidden;background:linear-gradient(105deg,#f8f6f0 0%,#f3f1eb 58%,#eeece5 100%)}
+.why-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(430px,1.1fr);gap:clamp(36px,5vw,80px);min-height:470px;padding-top:64px;position:relative;z-index:2}
+.why-content{padding-bottom:64px;position:relative;z-index:3}
 .why h2,.system h2,.journey h2,.facility h2,.coaches h2,.culture h2,.final-cta h2{font:400 clamp(45px,4.6vw,68px)/.93 Anton,Impact,sans-serif;letter-spacing:.003em;margin:13px 0 0}
-.why-copy{padding-top:22px;padding-right:300px;position:relative;z-index:3}
-.why-copy p{font-size:13px;line-height:1.55;max-width:420px}
-.why-copy strong{display:block;margin-top:22px;color:var(--red);font:800 20px/1.02 "Barlow Condensed",sans-serif}
-.why-photo{position:absolute;right:26px;bottom:0;width:334px;height:290px;background:url('/assets/why-kid-exact.jpg') center bottom/contain no-repeat;z-index:2}
-.ghost-22,.side-note{display:none}
+.why-copy{margin-top:24px;position:relative;z-index:3;max-width:540px}
+.why-copy p{font-size:13px;line-height:1.6;margin-bottom:0}
+.why-copy strong{display:block;margin-top:24px;color:var(--red);font:800 21px/1.03 "Barlow Condensed",sans-serif}
+.why-art{position:relative;min-height:406px;align-self:end}
+.why-mark{position:absolute;z-index:1;right:-6%;top:-7%;width:108%;height:100%;object-fit:contain;object-position:center}
+.why-player{position:absolute;z-index:2;right:18%;bottom:0;height:96%;width:auto;max-width:none;object-fit:contain;filter:grayscale(1) contrast(1.08)}
+.side-note{display:block;position:absolute;z-index:3;right:0;bottom:62px;color:var(--ink);font:800 12px/1.02 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.side-note span{font-weight:500}
+.side-note::after{content:"";display:block;width:37px;height:4px;background:var(--red);margin-top:11px}
 
 .system{padding:58px 0 56px}
 .system-head{display:grid;grid-template-columns:1.25fr .68fr;gap:90px;align-items:start}
@@ -156,10 +161,12 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .menu-button{display:block}
   .nav-cta{display:none}
   .why-grid,.system-head,.journey-grid,.coaches-head,.culture-grid,.final-grid{grid-template-columns:1fr}
-  .why{padding-bottom:275px}
-  .why-copy{padding-right:0}
-  .why-photo{display:block;right:50%;transform:translateX(50%);width:334px;height:290px}
-  .side-note{display:none}
+  .why-grid{padding-top:60px}
+  .why-content{padding-bottom:0}
+  .why-art{min-height:390px}
+  .why-mark{right:0;width:100%}
+  .why-player{right:24%;height:94%}
+  .side-note{right:9%;bottom:54px}
   .pillars{grid-template-columns:1fr 1fr}
   .pillars article:nth-child(3){border-left:0;padding-left:0}
   .path{grid-template-columns:1fr;gap:17px}
@@ -188,7 +195,10 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .hero-culture{right:5%;bottom:25px;font-size:18px}
   .hero-rail{display:none}
   .why,.system,.journey,.coaches,.up-next{padding-left:0;padding-right:0}
-  .why-grid{padding-top:70px;padding-bottom:70px}
+  .why-grid{padding-top:56px;padding-bottom:0}
+  .why-art{min-height:330px;margin-top:18px}
+  .why-player{right:21%;height:94%}
+  .side-note{right:2%;bottom:42px;font-size:10px}
   .why h2,.system h2,.journey h2,.coaches h2{font-size:45px}
   .pillars{grid-template-columns:1fr}
   .pillars article,.pillars article+article{padding:24px 0;border-left:0;border-bottom:1px solid var(--line)}
