@@ -220,8 +220,9 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .side-note{right:9%;bottom:54px}
   .pillars{grid-template-columns:1fr 1fr}
   .pillars article:nth-child(3){border-left:0;padding-left:0}
-  .path{grid-template-columns:1fr;gap:17px}
-  .path i{transform:rotate(90deg);padding:0}
+  .path{grid-template-columns:1fr;gap:0}
+  .path article{padding:0 0 20px}
+  .path i{width:28px;height:30px;display:grid;place-items:center;justify-self:start;margin:0 0 20px 1px;transform:rotate(90deg);padding:0;font-size:25px}
   .facility{grid-template-columns:1fr}
   .facility-photo{min-height:330px}
   .coach-grid{grid-template-columns:1fr 1fr}
@@ -278,12 +279,12 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
 }
 
 .journey-kicker-row,.culture-kicker-row{display:flex;align-items:center;gap:14px}
-.journey-flag-logo{width:38px;height:auto;transform:rotate(-7deg);opacity:.92}
+.journey-mark{width:58px;height:auto;flex:none;transform:rotate(-5deg);opacity:.94}
 .culture-kicker-row{justify-content:flex-start}
 .culture-oval-logo{width:82px;height:auto;opacity:.92}
 @media (max-width:640px){
   .hero-script-logo{right:4%;top:68px;width:108px}
-  .journey-flag-logo{width:32px}
+  .journey-mark{width:52px}
   .culture-oval-logo{width:72px}
 }
 
