@@ -57,6 +57,7 @@ h1,h2,h3,p{margin-top:0}
 .why-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(430px,1.1fr);gap:clamp(36px,5vw,80px);min-height:470px;padding-top:64px;position:relative;z-index:2}
 .why-content{padding-bottom:64px;position:relative;z-index:3}
 .why h2,.system h2,.journey h2,.facility h2,.coaches h2,.culture h2,.final-cta h2{font:400 clamp(45px,4.6vw,68px)/.93 Anton,Impact,sans-serif;letter-spacing:.003em;margin:13px 0 0}
+.section-heading{font:400 clamp(45px,4.6vw,68px)/.93 Anton,Impact,sans-serif;letter-spacing:.003em;text-transform:uppercase;margin:13px 0 0}
 .why-copy{margin-top:24px;position:relative;z-index:3;max-width:540px}
 .why-copy p{font-size:13px;line-height:1.6;margin-bottom:0}
 .why-copy strong{display:block;margin-top:24px;color:var(--red);font:800 21px/1.03 "Barlow Condensed",sans-serif}
@@ -126,8 +127,8 @@ h1,h2,h3,p{margin-top:0}
 .culture-values i{display:block;width:42px;height:4px;background:var(--red);margin-top:6px}
 
 .social-proof{background:#0b0d0f;color:#fff;padding:62px 0 0}
-.social-proof-head{display:grid;grid-template-columns:1fr .68fr;gap:72px;align-items:end;padding-bottom:38px}
-.social-proof h2{font-size:58px;color:#fff;margin:10px 0 0}
+.social-proof-head{display:grid;grid-template-columns:1.05fr .63fr;gap:58px;align-items:end;padding-bottom:38px}
+.social-proof .section-heading{font-size:58px;color:#fff;margin:10px 0 0}
 .social-proof-copy{padding-bottom:5px}
 .social-proof-copy p{max-width:470px;color:#c7c9ca;font-size:12px;line-height:1.55;margin:0 0 18px}
 .social-proof-copy a{font:800 11px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:#fff;border-bottom:2px solid var(--red);padding-bottom:4px}
@@ -252,7 +253,7 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .why-art{min-height:330px;margin-top:18px}
   .why-player{right:21%;height:94%}
   .side-note{right:2%;bottom:42px;font-size:10px}
-  .why h2,.system h2,.journey h2,.coaches h2,.social-proof h2{font-size:45px}
+  .why h2,.system h2,.journey h2,.coaches h2,.social-proof .section-heading{font-size:45px}
   .pillars{grid-template-columns:1fr}
   .pillars article,.pillars article+article{padding:24px 0;border-left:0;border-bottom:1px solid var(--line)}
   .journey{padding:70px 0}

@@ -12,6 +12,20 @@ The homepage source is located at `src/pages/index.astro`.
 Pull requests are deployed as Cloudflare preview builds. The Wrangler
 `previews` setting in `wrangler.jsonc` is required by that preview command.
 
+## Visual style guide
+
+New sections should reuse the existing design language instead of introducing
+new typography or spacing patterns:
+
+- Use `.shell` for the standard content width.
+- Use `.kicker` for small red uppercase section labels.
+- Use `.section-heading` for new display headlines. It matches the site's Anton
+  typeface, condensed line height, uppercase treatment and responsive sizing.
+- Keep the black, cream and TwentyTwo red palette defined in `:root`.
+- Use Barlow Condensed for navigation, buttons, metadata and compact labels;
+  use Inter for body copy.
+- Favor square-cornered blocks, thin dividers and restrained red accents.
+
 ## Publishing an update
 
 Add one Markdown file to `src/content/updates/`. Astro validates the frontmatter,
