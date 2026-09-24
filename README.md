@@ -40,3 +40,7 @@ Future-dated entries are excluded until a build on or after `publishedAt`.
 Images may use a local `/assets/` path or a hosted HTTPS URL.
 Run `pnpm run check` before publishing a content pull request to catch missing
 or invalid frontmatter fields.
+
+The images in `public/assets/instagram/` are temporary Instagram-sized copies.
+Replace them with original exports using the same filenames when those files
+become available.

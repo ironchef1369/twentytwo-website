@@ -4,8 +4,8 @@ summary: The next season starts here for Orange County players from 7U through 1
 publishedAt: 2026-09-24
 category: Tryouts
 featured: true
-image: https://images.pexels.com/photos/7201139/pexels-photo-7201139.jpeg?auto=compress&cs=tinysrgb&w=1200
-imageAlt: Youth basketball player preparing to shoot
+image: /assets/instagram/youth-team.jpg
+imageAlt: Team TwentyTwo youth players and coaches together after a game
 ctaLabel: View tryout information
 ctaUrl: /#tryouts
 ---

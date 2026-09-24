@@ -4,8 +4,8 @@ summary: Why TwentyTwo builds foundation, athleticism, competition habits and ch
 publishedAt: 2026-09-18
 category: Development
 featured: true
-image: https://images.pexels.com/photos/6767224/pexels-photo-6767224.jpeg?auto=compress&cs=tinysrgb&w=1200
-imageAlt: Basketball player training in a gym
+image: /assets/instagram/game-action.jpg
+imageAlt: Team TwentyTwo player handling the ball during a game
 ctaLabel: Explore our development path
 ctaUrl: /#development
 ---

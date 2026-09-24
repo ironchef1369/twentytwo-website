@@ -4,8 +4,8 @@ summary: A dedicated Lake Forest basketball environment built around player deve
 publishedAt: 2026-09-12
 category: Facility
 featured: true
-image: https://images.pexels.com/photos/5549509/pexels-photo-5549509.jpeg?auto=compress&cs=tinysrgb&w=1200
-imageAlt: Indoor basketball court
+image: /assets/instagram/team-celebration.jpg
+imageAlt: Team TwentyTwo players and coach celebrating together
 ctaLabel: Explore the facility
 ctaUrl: https://ochooplegends.com
 ---
