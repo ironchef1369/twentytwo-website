@@ -1,6 +1,7 @@
 {
   "name": "twentytwo-website",
   "version": "1.0.0",
+  "description": "Team TwentyTwo basketball website",
   "private": true,
   "engines": {
     "node": ">=22.12.0"
