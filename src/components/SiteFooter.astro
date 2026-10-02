@@ -1,0 +1,19 @@
+---
+const sectionPrefix = Astro.url.pathname === "/" ? "" : "/";
+---
+
+<footer>
+  <div class="shell footer-inner">
+    <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
+    <nav>
+      <a href={`${sectionPrefix}#teams`}>Teams</a>
+      <a href={`${sectionPrefix}#development`}>Development</a>
+      <a href={`${sectionPrefix}#coaches`}>Coaches</a>
+      <a href={`${sectionPrefix}#facility`}>Facility</a>
+      <a href="/updates/">Updates</a>
+      <a href={`${sectionPrefix}#about`}>About</a>
+    </nav>
+    <div class="social">◎ ◻</div>
+    <span>BETTER PLAYERS. BETTER PEOPLE.</span>
+  </div>
+</footer>
