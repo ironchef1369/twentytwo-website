@@ -26,6 +26,26 @@ new typography or spacing patterns:
   use Inter for body copy.
 - Favor square-cornered blocks, thin dividers and restrained red accents.
 
+## Editing program pages
+
+The main menu links to Our story, The culture, Our home, and Parent Guidelines.
+Tryouts remains the header CTA, including on mobile.
+
+Edit the Markdown files in `src/content/pages/` to update page content. Each
+filename sets its URL (for example, `the-culture.md` becomes `/the-culture/`).
+Frontmatter sets the hero headline, summary, image, statement, and optional
+three priority cards. The Markdown body sets the page sections; second-level
+headings automatically populate the page's section navigation.
+
+These pages contain starter copy for editorial review. Hidden comments identify
+where to add confirmed founding details, facility logistics, tryout dates,
+registration links, and parent policies. Keep unconfirmed details out of the
+published copy. The Tryouts page currently points to the existing announcement
+until schedule and registration details are available.
+
+Run `pnpm check` and `pnpm build` after content changes. The shared page template
+is `src/pages/[page].astro` and shared styles are in `src/styles.css`.
+
 ## Publishing an update
 
 Add one Markdown file to `src/content/updates/`. Astro validates the frontmatter,
