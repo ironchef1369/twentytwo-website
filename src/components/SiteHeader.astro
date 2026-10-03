@@ -1,5 +1,10 @@
 ---
-const sectionPrefix = Astro.url.pathname === "/" ? "" : "/";
+const links = [
+  { href: "/our-story/", label: "Our story" },
+  { href: "/the-culture/", label: "The culture" },
+  { href: "/our-home/", label: "Our home" },
+  { href: "/parent-guidelines/", label: "Parent Guidelines" },
+];
 ---
 
 <div class="topbar">
@@ -8,19 +13,14 @@ const sectionPrefix = Astro.url.pathname === "/" ? "" : "/";
 </div>
 
 <header class="site-header">
-  <a class="brand" href={`${sectionPrefix}#top`} aria-label="Team TwentyTwo home">
+  <a class="brand" href="/" aria-label="Team TwentyTwo home">
     <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
   </a>
-  <nav class="desktop-nav" aria-label="Primary navigation">
-    <a href={`${sectionPrefix}#teams`}>Teams</a>
-    <a href={`${sectionPrefix}#development`}>Development</a>
-    <a href={`${sectionPrefix}#coaches`}>Coaches</a>
-    <a href={`${sectionPrefix}#facility`}>Facility</a>
-    <a href="/updates/">Updates</a>
-    <a href={`${sectionPrefix}#about`}>About</a>
+  <nav class="desktop-nav" id="primary-nav" aria-label="Primary navigation">
+    {links.map(({ href, label }) => <a href={href} aria-current={Astro.url.pathname.replace(/\/$/, "") === href.replace(/\/$/, "") ? "page" : undefined}>{label}</a>)}
   </nav>
   <div class="header-actions">
-    <a class="nav-cta" href={`${sectionPrefix}#tryouts`}>Tryouts</a>
-    <button class="menu-button" aria-label="Open menu">☰</button>
+    <a class="nav-cta" href="/tryouts/" aria-current={Astro.url.pathname.replace(/\/$/, "") === "/tryouts" ? "page" : undefined}>Tryouts</a>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
   </div>
 </header>
