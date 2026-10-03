@@ -7,7 +7,7 @@ featured: true
 image: /assets/instagram/youth-team.jpg
 imageAlt: Team TwentyTwo youth players and coaches together after a game
 ctaLabel: View tryout information
-ctaUrl: /#tryouts
+ctaUrl: /tryouts/
 ---
 
 TwentyTwo is preparing for the 2026–27 club basketball season. Tryout schedule and registration details will be posted here as they are confirmed.

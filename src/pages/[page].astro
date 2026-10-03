@@ -1,0 +1,48 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  return (await getCollection("pages")).map((entry) => ({ params: { page: entry.id }, props: { entry } }));
+}
+interface Props { entry: CollectionEntry<"pages">; }
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content, headings } = await render(entry);
+---
+
+<BaseLayout title={`${data.title} | Team TwentyTwo`} description={data.summary}>
+  <main class="program-page">
+    <header class="program-hero">
+      <div class="program-hero-copy">
+        <a class="program-back" href="/">← Team TwentyTwo</a>
+        <div class="kicker">/ {data.kicker}</div>
+        <h1>{data.headline}</h1>
+        <p>{data.summary}</p>
+        <a class="button red" href={entry.id === "tryouts" ? "/updates/2026-27-youth-tryouts/" : "/tryouts/"}>{entry.id === "tryouts" ? "Latest tryout information" : "Explore tryouts"} <span>→</span></a>
+      </div>
+      <div class="program-hero-art">
+        <img src={data.image} alt={data.imageAlt} width="1280" height="854" fetchpriority="high" />
+        <span class="program-photo-label">TEAM TWENTYTWO / ORANGE COUNTY</span>
+      </div>
+    </header>
+    <div class="program-statement"><div class="shell"><span>THE TWENTYTWO WAY</span><p>{data.statement}</p></div></div>
+    {data.principles.length > 0 && <section class="program-principles light" aria-label="Our priorities">
+      <div class="shell principle-grid">{data.principles.map((principle, index) => <article>
+        <span class="principle-number">0{index + 1}</span><h2>{principle.title}</h2><p>{principle.text}</p>
+      </article>)}</div>
+    </section>}
+    <section class="program-body light">
+      <div class="shell program-body-grid">
+        <aside class="program-contents">
+          <span class="kicker">/ {data.title}</span>
+          <nav aria-label="On this page">{headings.filter((heading) => heading.depth === 2).map((heading) => <a href={`#${heading.slug}`}>{heading.text} <span>↗</span></a>)}</nav>
+        </aside>
+        <article class="program-prose"><Content /></article>
+      </div>
+    </section>
+    <section class="program-cta dark">
+      <div class="shell"><div><div class="kicker">/ YOUR NEXT CHAPTER</div><h2>GROW WITH THE GAME.<br>GROW WITH US.</h2><p>Meet the program, understand the approach, and find the next step for your player.</p></div><a class="button red" href="/tryouts/">Tryouts <span>→</span></a></div>
+    </section>
+  </main>
+</BaseLayout>
