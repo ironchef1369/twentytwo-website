@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"updates">;
+  compact?: boolean;
+}
+
+const { entry, compact = false } = Astro.props;
+const href = `/updates/${entry.id}/`;
+const date = entry.data.publishedAt.toLocaleDateString("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+---
+
+{compact ? (
+  <a class="next-card update-card" href={href}>
+    <div class="next-img" style={entry.data.image ? `background-image:url('${entry.data.image}')` : undefined} role="img" aria-label={entry.data.imageAlt ?? ""}></div>
+    <div>
+      <h3>{entry.data.title}</h3>
+      <p>{entry.data.summary}</p>
+      <span>Read update →</span>
+    </div>
+  </a>
+) : (
+  <article class="update-card-large">
+    <a class="update-card-image" href={href} style={entry.data.image ? `background-image:url('${entry.data.image}')` : undefined} aria-label={`Read ${entry.data.title}`}></a>
+    <div class="update-card-body">
+      <div class="update-meta"><span>{entry.data.category}</span><time datetime={entry.data.publishedAt.toISOString()}>{date}</time></div>
+      <h2><a href={href}>{entry.data.title}</a></h2>
+      <p>{entry.data.summary}</p>
+      <a class="update-link" href={href}>Read update →</a>
+    </div>
+  </article>
+)}

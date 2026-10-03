@@ -1,0 +1,26 @@
+---
+const sectionPrefix = Astro.url.pathname === "/" ? "" : "/";
+---
+
+<div class="topbar">
+  <a href="/updates/2026-27-youth-tryouts/">2026–27 YOUTH TRYOUTS <span>→</span> VIEW UPDATE</a>
+  <button aria-label="Dismiss">×</button>
+</div>
+
+<header class="site-header">
+  <a class="brand" href={`${sectionPrefix}#top`} aria-label="Team TwentyTwo home">
+    <img class="main-wordmark" src="/assets/twentytwo-wordmark-primary.png" alt="Team TwentyTwo">
+  </a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href={`${sectionPrefix}#teams`}>Teams</a>
+    <a href={`${sectionPrefix}#development`}>Development</a>
+    <a href={`${sectionPrefix}#coaches`}>Coaches</a>
+    <a href={`${sectionPrefix}#facility`}>Facility</a>
+    <a href="/updates/">Updates</a>
+    <a href={`${sectionPrefix}#about`}>About</a>
+  </nav>
+  <div class="header-actions">
+    <a class="nav-cta" href={`${sectionPrefix}#tryouts`}>Tryouts</a>
+    <button class="menu-button" aria-label="Open menu">☰</button>
+  </div>
+</header>

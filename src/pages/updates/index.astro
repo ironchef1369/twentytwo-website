@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import UpdateCard from "../../components/UpdateCard.astro";
+
+const now = new Date();
+const updates = (await getCollection("updates"))
+  .filter((entry) => entry.data.publishedAt <= now)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout
+  title="Updates | Team TwentyTwo Basketball"
+  description="The latest Team TwentyTwo announcements, program news, tryout information and player development stories."
+>
+  <main class="updates-page">
+    <header class="updates-hero">
+      <div class="shell">
+        <div class="kicker red-text">/ NEWS + ANNOUNCEMENTS</div>
+        <h1>WHAT'S HAPPENING<br>AT TWENTYTWO.</h1>
+        <p>Tryouts, program updates, development stories and everything coming next.</p>
+      </div>
+    </header>
+    <section class="updates-list light">
+      <div class="shell updates-grid">
+        {updates.map((entry) => <UpdateCard entry={entry} />)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
