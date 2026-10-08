@@ -57,6 +57,22 @@ h1,h2,h3,p{margin-top:0}
 .hero-rail{position:absolute;right:24px;top:70px;bottom:70px;z-index:4;display:flex;flex-direction:column;align-items:center;gap:9px;font:700 9px/1 "Barlow Condensed",sans-serif}
 .hero-rail i{display:block;width:2px;flex:1;background:linear-gradient(var(--red) 0 16%,rgba(255,255,255,.45) 16% 100%)}
 
+/* A dark grade and vignette bring the eye to the huddle. */
+.hero-huddle .hero-photo{inset:0 -8% 0 18%;mask-image:none;filter:brightness(.68) contrast(1.2) saturate(.82)}
+.hero-huddle .hero-photo img{object-position:center 68%}
+.hero-huddle .hero-shade{background:linear-gradient(90deg,#0b0d0f 0%,rgba(11,13,15,.97) 22%,rgba(11,13,15,.74) 39%,rgba(11,13,15,.08) 65%,rgba(11,13,15,.28) 100%),radial-gradient(ellipse at 72% 48%,transparent 20%,rgba(0,0,0,.55) 88%),linear-gradient(0deg,rgba(11,13,15,.68),transparent 35%,rgba(11,13,15,.18))}
+.hero-huddle .hero-copy{max-width:540px}
+.hero-huddle p{max-width:430px}
+@media(max-width:980px){
+  .hero.hero-huddle{height:auto;display:flex;flex-direction:column}
+  .hero-huddle .hero-photo{display:block;position:relative;inset:auto;filter:none}
+  .hero-huddle .hero-photo img{height:auto;width:100%;object-fit:contain;filter:brightness(.65) contrast(1.2) saturate(.82)}
+  .hero-huddle .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--black),transparent 40%),radial-gradient(ellipse at 52% 50%,transparent 25%,rgba(0,0,0,.45))}
+  .hero-huddle .hero-shade{display:none}
+  .hero-huddle .hero-inner{height:auto;padding:16px 0 42px}
+  .hero-huddle h1{font-size:58px}
+}
+
 .affiliations{background:var(--black);color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.12)}
 .affiliations-inner{min-height:132px;display:grid;grid-template-columns:260px 1fr;align-items:stretch}
 .affiliations-intro{display:flex;flex-direction:column;justify-content:center;padding-right:34px}

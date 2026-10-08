@@ -16,27 +16,23 @@ const latestDate = latestUpdate?.data.publishedAt.toLocaleDateString("en-US", {
 
 <BaseLayout>
   <main id="top">
-    <section class="hero">
+    <section class="hero hero-huddle">
       <picture class="hero-photo">
-        <source media="(max-width: 600px)" srcset="/assets/hero-team-celebration-mobile.webp" />
-        <img src="/assets/hero-team-celebration-1920.webp" srcset="/assets/hero-team-celebration-1920.webp 1920w, /assets/hero-team-celebration-2560.webp 2560w" sizes="100vw" width="1920" height="1280" alt="Team TwentyTwo players and coaches celebrating together on the court" fetchpriority="high" />
+        <img src="/assets/hero-team-huddle-1920.webp" srcset="/assets/hero-team-huddle-960.webp 960w, /assets/hero-team-huddle-1920.webp 1920w, /assets/hero-team-huddle-2560.webp 2560w" sizes="100vw" width="1920" height="1280" alt="Team TwentyTwo players and coaches gathered in a courtside huddle with their hands raised" fetchpriority="high" />
       </picture>
-      <div class="hero-shade"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-inner shell">
         <div class="hero-copy">
           <div class="eyebrow">Orange County Club Basketball <span>/</span> 8U–14U</div>
           <h1>BUILD THE<br><em>PLAYER.</em><br>NOT THE HYPE.</h1>
-          <p>We develop basketball players for where they're going,<br>not just where they are today.</p>
-          <p class="detail">Skills. IQ. Athletic development. Character. Competition.<br>A complete basketball environment built for the long game.</p>
+          <p>We develop basketball players for where they're going, not just where they are today.</p>
+          <p class="detail">Skills. IQ. Athletic development. Character. Competition. A complete basketball environment built for the long game.</p>
           <div class="actions">
             <a class="button red" href="/the-culture/">Explore our development path <span>→</span></a>
             <a class="button outline" href="/tryouts/">Explore tryouts</a>
           </div>
         </div>
       </div>
-      <img class="hero-script-logo" src="/assets/logo-script.webp" alt="Twenty2 script logo">
-      <div class="hero-culture">WE ARE<br>THE CULTURE.</div>
-      <div class="hero-rail"><span>01</span><i></i><small>H2</small></div>
     </section>
 
     <section class="affiliations" aria-labelledby="affiliations-heading">
