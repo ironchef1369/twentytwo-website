@@ -15,7 +15,11 @@ principles:
     text: A difficult weekend is part of a bigger journey. Help your player reflect, learn, and look forward to the next opportunity.
 ---
 
-<!-- Starter guidance for review. Add approved communication channels, attendance expectations, travel information, and program policies once confirmed. -->
+## Be someone the team can count on
+
+Being part of Team 22 means being someone your teammates can count on. Consistent participation, preparation, and timely communication help every player and the team grow.
+
+Families help build those habits by supporting the commitment and keeping coaches informed when something changes.
 
 ## Make encouragement consistent
 
@@ -25,13 +29,17 @@ Give players room to enjoy the experience. Some will want to talk right away; ot
 
 ## Create a positive sideline
 
-Cheer for the whole team. Let coaches guide the basketball decisions, and model the respect we ask players to show.
+Cheer for the whole team and let coaches lead the instruction. Your encouragement helps players stay focused, confident, and connected to their teammates.
+
+Players, coaches, and families share responsibility for a respectful environment. Treat teammates, opponents, officials, and one another with dignity.
 
 The way families react to mistakes, substitutions, and tough calls contributes to the environment. Help make the gym a place where players can compete with confidence and learn without carrying extra pressure from the sideline.
 
 ## Partner with the coaches
 
-Clear, respectful conversations help everyone understand a player's development. Bring questions with a focus on growth: what is the player working on, what habits need attention, and how can the family support that work?
+We welcome questions and honest conversations. Speak directly with your player's coach so we can listen, explain, and work together to support their development.
+
+Bring questions with a focus on growth: what is the player working on, what habits need attention, and how can the family support that work?
 
 As players mature, help them learn to ask questions and speak for themselves. Parents remain partners in that process. Families and coaches can work together to keep the conversation constructive and centered on the player.
 
@@ -45,6 +53,6 @@ Basketball should fit within a young person's wider life, including school, rest
 
 Progress is rarely a straight line. Players develop at different speeds, and comparison can distract from the next useful step.
 
-Help your player focus on effort, decisions, and the skills he is building. Our shared goal is a stronger, more confident person who is prepared for the next chapter of his basketball career.
+Help your player focus on effort, decisions, and the skills they are building. Our shared goal is a stronger, more confident person who is prepared for the next chapter of their basketball journey.
 
 [Explore the values we share →](/the-culture/)

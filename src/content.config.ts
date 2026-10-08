@@ -28,6 +28,7 @@ const pages = defineCollection({
     summary: z.string(),
     image: z.string(),
     imageAlt: z.string(),
+    imagePosition: z.string().default("center"),
     statement: z.string(),
     principles: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
   }),

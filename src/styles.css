@@ -35,10 +35,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 .dark{background:linear-gradient(135deg,#0c0e0f,#101416);color:#fff}
 h1,h2,h3,p{margin-top:0}
 
-.hero{height:620px;position:relative;color:#fff;overflow:hidden}
-.hero-photo{position:absolute;inset:0;background-image:url('/assets/hero-team-13u.jpg');background-size:cover;background-position:center 43%;filter:saturate(.55) contrast(1.08) brightness(.72)}
+.hero{height:620px;position:relative;color:#fff;overflow:hidden;background:var(--black)}
+.hero-photo{position:absolute;inset:0 -24% 0 24%;mask-image:linear-gradient(to right,transparent,#000 18%);filter:saturate(.85) contrast(1.04)}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 43%}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.55) contrast(1.08) brightness(.72)}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,8,.98) 0%,rgba(5,7,8,.9) 34%,rgba(5,7,8,.18) 64%,rgba(5,7,8,.68) 100%)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,8,.96) 0%,rgba(5,7,8,.68) 34%,rgba(5,7,8,.06) 64%,rgba(5,7,8,.3) 100%)}
 .hero-inner{height:100%;display:flex;align-items:center;position:relative;z-index:2}
 .hero-copy{padding-top:8px}
 .hero h1{font:400 clamp(60px,6.6vw,96px)/.91 Anton,Impact,sans-serif;letter-spacing:.004em;margin:16px 0 20px}
@@ -115,24 +116,17 @@ h1,h2,h3,p{margin-top:0}
 .facility-features span{font:800 11px/1.2 "Barlow Condensed",sans-serif;text-transform:uppercase}
 
 .coaches{padding:56px 0 55px}
-.coaches-head{display:grid;grid-template-columns:1.05fr .75fr auto;gap:58px;align-items:start}
+.coaches-head{display:grid;grid-template-columns:1.05fr .75fr;gap:58px;align-items:start}
 .coach-copy{padding-top:18px}
 .coach-copy p{font-size:12px;line-height:1.5}
 .coach-copy a{font:800 11px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
-.arrows{padding-top:22px;font-size:30px}
-.coach-grid{display:grid;grid-template-columns:repeat(4,1fr) .88fr;gap:13px;margin-top:33px}
-.coach-card{height:228px;position:relative;background-color:#1a1d1f;background-size:cover;background-position:center;filter:grayscale(.9)}
-.coach-one{background-image:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.92)),url('https://images.pexels.com/photos/6767326/pexels-photo-6767326.jpeg?auto=compress&cs=tinysrgb&w=700')}
-.coach-two{background-image:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.92)),url('https://images.pexels.com/photos/6766998/pexels-photo-6766998.jpeg?auto=compress&cs=tinysrgb&w=700');background-position:60% center}
-.coach-three{background-image:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.92)),url('https://images.pexels.com/photos/6767224/pexels-photo-6767224.jpeg?auto=compress&cs=tinysrgb&w=700');background-position:35% center}
-.coach-four{background-image:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.92)),url('https://images.pexels.com/photos/6224508/pexels-photo-6224508.jpeg?auto=compress&cs=tinysrgb&w=700')}
-.coach-card div{position:absolute;left:12px;right:12px;bottom:11px;color:#fff}
-.coach-card h3{font:800 14px/1 "Barlow Condensed",sans-serif;margin:0 0 3px}
-.coach-card p{font-size:9px;margin:0}
-.quote-card{height:228px;background:#16191b;color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;font:400 25px/.98 "Permanent Marker",cursive;transform:rotate(.3deg);border-bottom:4px solid var(--red)}
+.coach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:33px}
+.coach-card{min-height:115px;display:flex;align-items:center;padding:20px;background:#1a1d1f;border-bottom:3px solid var(--red);color:#fff}
+.coach-card h3{font:800 20px/1.15 "Barlow Condensed",sans-serif;margin:0 0 8px}
+.coach-card p{font-size:12px;margin:0;color:#d8d8d8}
 
 .culture{height:320px;position:relative;overflow:hidden;color:#fff}
-.culture-photo{position:absolute;inset:0;background:url('https://images.pexels.com/photos/3755445/pexels-photo-3755445.jpeg?auto=compress&cs=tinysrgb&w=1800') center 52%/cover no-repeat;filter:grayscale(.85) contrast(1.12) brightness(.68)}
+.culture-photo{position:absolute;inset:0;background:url('/assets/home-culture-team-huddle.webp') center 52%/cover no-repeat;filter:grayscale(.85) contrast(1.12) brightness(.68)}
 .culture-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(173,0,15,.95) 0%,rgba(207,10,28,.84) 48%,rgba(101,0,8,.82) 100%)}
 .culture-grid{height:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr .55fr;gap:80px;align-items:center}
 .culture h2{font-size:58px;color:#fff;margin:10px 0 13px}
@@ -259,7 +253,8 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .shell{width:min(100% - 32px,1180px)}
   .topbar{font-size:10px}
   .hero{height:650px}
-  .hero-photo{background-position:62% center}
+  .hero-photo{inset:0;mask-image:none}
+  .hero-photo img{object-position:62% center}
   .hero-video{object-position:58% center}
   .hero h1{font-size:58px}
   .hero-script{right:4%;top:75px;font-size:28px}
@@ -287,7 +282,6 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .facility-panel{padding:58px 18px}
   .facility-features{grid-template-columns:1fr}
   .coach-grid{grid-template-columns:1fr}
-  .coach-card,.quote-card{height:330px}
   .culture h2{font-size:50px}
   .social-proof{padding-top:54px}
   .social-grid{height:auto;grid-template-columns:1fr 1fr}
@@ -338,6 +332,18 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
 .program-hero-art{position:relative;min-height:550px;overflow:hidden;background:#16191b}
 .program-hero-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.85)}
 .program-hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(0,0,0,.65))}
+.culture-hero .program-hero-art{background:var(--black)}
+.culture-hero .program-hero-art>img{filter:none;mask-image:linear-gradient(to right,transparent,#000 20%)}
+.culture-hero .program-hero-art::after{background:linear-gradient(180deg,transparent 80%,rgba(0,0,0,.35))}
+/* The story portrait keeps its light studio backdrop and all four faces visible. */
+.story-hero{background:#e7e7ef;color:var(--black)}
+.story-hero .program-back{color:#505057}
+.story-hero .kicker{color:var(--red)}
+.story-hero .program-hero-copy>p{color:#35353b}
+.story-hero .program-hero-art{background:#e7e7ef}
+.story-hero .program-hero-art>img{filter:none;mask-image:linear-gradient(to right,transparent,#000 12%)}
+.story-hero .program-hero-art::after{background:none}
+.story-hero .program-photo-label{color:#35353b;background:rgba(231,231,239,.85);padding:8px 10px}
 .program-photo-label{position:absolute;z-index:1;left:30px;bottom:28px;color:#fff;font:800 10px/1 "Barlow Condensed",sans-serif;letter-spacing:.08em}
 .program-statement{background:var(--red);color:#fff;padding:28px 0}
 .program-statement>.shell{display:flex;align-items:center;gap:40px}
@@ -382,6 +388,9 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .program-back{margin-bottom:30px}
   .program-hero h1{font-size:54px}
   .program-hero-art{min-height:290px}
+  .story-hero .program-hero-art{min-height:0;aspect-ratio:1}
+  .story-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 10%)}
+  .culture-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 18%)}
   .program-photo-label{left:18px;bottom:22px;font-size:9px}
   .program-statement>.shell{flex-direction:column;align-items:flex-start;gap:12px}
   .program-principles{padding-top:38px}

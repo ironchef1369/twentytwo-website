@@ -13,7 +13,7 @@ const { Content, headings } = await render(entry);
 
 <BaseLayout title={`${data.title} | Team TwentyTwo`} description={data.summary}>
   <main class="program-page">
-    <header class="program-hero">
+    <header class:list={["program-hero", { "culture-hero": entry.id === "the-culture", "story-hero": entry.id === "our-story" }]}>
       <div class="program-hero-copy">
         <a class="program-back" href="/">← Team TwentyTwo</a>
         <div class="kicker">/ {data.kicker}</div>
@@ -22,7 +22,7 @@ const { Content, headings } = await render(entry);
         <a class="button red" href={entry.id === "tryouts" ? "/updates/2026-27-youth-tryouts/" : "/tryouts/"}>{entry.id === "tryouts" ? "Latest tryout information" : "Explore tryouts"} <span>→</span></a>
       </div>
       <div class="program-hero-art">
-        <img src={data.image} alt={data.imageAlt} width="1280" height="854" fetchpriority="high" />
+        <img src={data.image} alt={data.imageAlt} style={{ objectPosition: data.imagePosition }} width="1280" height="854" fetchpriority="high" />
         <span class="program-photo-label">TEAM TWENTYTWO / ORANGE COUNTY</span>
       </div>
     </header>
