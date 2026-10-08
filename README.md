@@ -28,7 +28,7 @@ new typography or spacing patterns:
 
 ## Editing program pages
 
-The main menu links to Our story, The culture, Our home, and Parent Guidelines.
+The main menu links to Our story, The culture, Our coaches, Our home, Parent Guidelines, and Updates.
 Tryouts remains the header CTA, including on mobile.
 
 Edit the Markdown files in `src/content/pages/` to update page content. Each
@@ -49,7 +49,8 @@ is `src/pages/[page].astro` and shared styles are in `src/styles.css`.
 ## Publishing an update
 
 Add one Markdown file to `src/content/updates/`. Astro validates the frontmatter,
-adds featured entries to the homepage, and generates the archive and article URL.
+shows the newest published, unexpired entry below the homepage affiliations strip,
+and generates the archive and permanent article URL for newsletters.
 
 ```md
 ---
@@ -59,7 +60,7 @@ publishedAt: 2026-10-01
 eventDate: 2026-10-18
 expiresAt: 2026-10-19
 category: Tryouts
-featured: true
+homepagePinned: false
 image: /assets/updates/fall-tryouts.jpg
 imageAlt: Players at a Team TwentyTwo tryout
 ctaLabel: Register now
@@ -71,6 +72,10 @@ Write the update here using Markdown.
 
 Future-dated entries are excluded until a build on or after `publishedAt`.
 `expiresAt` removes an entry from the homepage while keeping it in the archive.
+Set `homepagePinned: true` to override the latest update with a major announcement.
+If multiple entries are pinned, the newest eligible pinned entry wins. Remove the
+pin after the announcement to resume showing the newest update automatically.
+The legacy `featured` field is still accepted but no longer controls homepage selection.
 Images may use a local `/assets/` path or a hosted HTTPS URL.
 Run `pnpm run check` before publishing a content pull request to catch missing
 or invalid frontmatter fields.

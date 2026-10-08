@@ -1,17 +1,17 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import UpdateCard from "../components/UpdateCard.astro";
 
 const now = new Date();
-const updates = (await getCollection("updates"))
+const latestUpdate = (await getCollection("updates"))
   .filter((entry) =>
-    entry.data.featured &&
     entry.data.publishedAt <= now &&
     (!entry.data.expiresAt || entry.data.expiresAt >= now)
   )
-  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
-  .slice(0, 3);
+  .sort((a, b) => Number(b.data.homepagePinned) - Number(a.data.homepagePinned) || b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())[0];
+const latestDate = latestUpdate?.data.publishedAt.toLocaleDateString("en-US", {
+  month: "short", day: "numeric", year: "numeric", timeZone: "UTC",
+});
 ---
 
 <BaseLayout>
@@ -61,6 +61,26 @@ const updates = (await getCollection("updates"))
         </div>
       </div>
     </section>
+
+    {latestUpdate && <section class="latest-update light" id="updates" aria-labelledby="latest-update-heading">
+      <div class="shell">
+        <div class="latest-update-head">
+          <div class="kicker">/ LATEST AT TWENTYTWO</div>
+          <a class="update-link" href="/updates/">View all updates →</a>
+        </div>
+        <article class:list={["latest-update-grid", { "latest-update-no-image": !latestUpdate.data.image }]}>
+          {latestUpdate.data.image && <a class="latest-update-photo" href={`/updates/${latestUpdate.id}/`} aria-label={`Read ${latestUpdate.data.title}`}>
+            <img src={latestUpdate.data.image} alt={latestUpdate.data.imageAlt ?? ""} loading="lazy" width="960" height="640" />
+          </a>}
+          <div class="latest-update-copy">
+            <div class="update-meta"><span>{latestUpdate.data.category}</span><time datetime={latestUpdate.data.publishedAt.toISOString()}>{latestDate}</time></div>
+            <h2 class="section-heading" id="latest-update-heading"><a href={`/updates/${latestUpdate.id}/`}>{latestUpdate.data.title}</a></h2>
+            <p>{latestUpdate.data.summary}</p>
+            <a class="button red" href={`/updates/${latestUpdate.id}/`}>Read the update <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>}
 
     <section class="why light" id="about">
       <div class="shell why-grid">
@@ -215,18 +235,6 @@ const updates = (await getCollection("updates"))
         <a class="social-shot" href="https://www.instagram.com/huddyg10/reel/DdVls0dKmvzLIurZHZMjzhtOywgTXGyZVRSYEM0/" target="_blank" rel="noreferrer" aria-label="View Team TwentyTwo youth team on Instagram">
           <img src="/assets/instagram/youth-team.jpg" alt="Team TwentyTwo youth players and coaches together after a game" loading="lazy">
         </a>
-      </div>
-    </section>
-
-    <section class="up-next light" id="tryouts">
-      <div class="shell">
-        <div class="updates-section-head">
-          <div class="kicker">/ LATEST AT TWENTYTWO</div>
-          <a href="/updates/">View all updates →</a>
-        </div>
-        <div class="next-grid">
-          {updates.map((entry) => <UpdateCard entry={entry} compact />)}
-        </div>
       </div>
     </section>
 

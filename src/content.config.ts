@@ -12,6 +12,7 @@ const updates = defineCollection({
     expiresAt: z.coerce.date().optional(),
     category: z.string(),
     featured: z.boolean().default(false),
+    homepagePinned: z.boolean().default(false),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     ctaLabel: z.string().optional(),
