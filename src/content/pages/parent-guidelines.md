@@ -3,8 +3,9 @@ title: Parent Guidelines
 headline: "Their journey. Our shared support."
 kicker: For our families
 summary: "Players thrive when coaches and families work together. These guiding principles help us support the whole child, the whole team, and the years of growth ahead."
-image: /assets/hero-team-13u.jpg
-imageAlt: TwentyTwo teammates and their coach gathered together
+image: /assets/parents-team-arena.webp
+imageAlt: Team TwentyTwo players enjoying a UCLA basketball game together
+imagePosition: "65% 50%"
 statement: "Every player deserves encouragement. Every family helps set the tone."
 principles:
   - title: Encourage the effort

@@ -332,9 +332,11 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
 .program-hero-art{position:relative;min-height:550px;overflow:hidden;background:#16191b}
 .program-hero-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.85)}
 .program-hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(0,0,0,.65))}
-.culture-hero .program-hero-art{background:var(--black)}
-.culture-hero .program-hero-art>img{filter:none;mask-image:linear-gradient(to right,transparent,#000 20%)}
-.culture-hero .program-hero-art::after{background:linear-gradient(180deg,transparent 80%,rgba(0,0,0,.35))}
+.home-hero{grid-template-columns:minmax(320px,1fr) minmax(0,2fr)}
+.home-hero .program-hero-copy{padding-right:26px}
+.culture-hero .program-hero-art,.home-hero .program-hero-art{background:var(--black)}
+.culture-hero .program-hero-art>img,.home-hero .program-hero-art>img{filter:none;mask-image:linear-gradient(to right,transparent,#000 20%)}
+.culture-hero .program-hero-art::after,.home-hero .program-hero-art::after{background:linear-gradient(180deg,transparent 80%,rgba(0,0,0,.35))}
 /* The story portrait keeps its light studio backdrop and all four faces visible. */
 .story-hero{background:#e7e7ef;color:var(--black)}
 .story-hero .program-back{color:#505057}
@@ -343,6 +345,14 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
 .story-hero .program-hero-art{background:#e7e7ef}
 .story-hero .program-hero-art>img{filter:none;mask-image:linear-gradient(to right,transparent,#000 12%)}
 .story-hero .program-hero-art::after{background:none}
+.coaches-hero{display:grid;grid-template-columns:minmax(320px,1.12fr) minmax(0,1.85fr);min-height:480px}
+.coaches-hero .program-hero-copy{width:auto;padding:32px 26px 32px max(26px,calc((100vw - 1180px)/2));margin:0}
+.coaches-hero .program-back{margin-bottom:22px}
+.coaches-hero h1{max-width:430px;margin:17px 0 25px}
+.coaches-hero .program-hero-copy>p{max-width:430px;font-size:13px;line-height:1.65;margin-bottom:24px}
+.coaches-hero .program-hero-art{min-height:480px;width:100%;background:var(--black)}
+.coaches-hero .program-hero-art>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.35) 6%,rgba(0,0,0,.75) 14%,#000 26%)}
+.coaches-hero .program-hero-art::after{background:linear-gradient(to bottom,var(--black) 0%,transparent 20%,transparent 80%,var(--black) 100%)}
 .story-hero .program-photo-label{color:#35353b;background:rgba(231,231,239,.85);padding:8px 10px}
 .program-photo-label{position:absolute;z-index:1;left:30px;bottom:28px;color:#fff;font:800 10px/1 "Barlow Condensed",sans-serif;letter-spacing:.08em}
 .program-statement{background:var(--red);color:#fff;padding:28px 0}
@@ -374,6 +384,7 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
 .program-cta .button{flex-shrink:0}
 @media(max-width:980px){
   .program-hero{grid-template-columns:1fr 1fr;min-height:480px}
+  .home-hero{grid-template-columns:minmax(300px,1fr) minmax(0,2fr)}
   .program-hero-copy{padding:42px 28px 48px 26px}
   .program-hero h1{font-size:58px}
   .program-hero-art{min-height:480px}
@@ -388,9 +399,13 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .program-back{margin-bottom:30px}
   .program-hero h1{font-size:54px}
   .program-hero-art{min-height:290px}
+  .coaches-hero{grid-template-columns:1fr;min-height:0}
+  .coaches-hero .program-hero-copy{width:auto;padding:32px 18px}
+  .coaches-hero .program-hero-art{min-height:0;aspect-ratio:1920/974}
+  .coaches-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 8%)}
   .story-hero .program-hero-art{min-height:0;aspect-ratio:1}
   .story-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 10%)}
-  .culture-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 18%)}
+  .culture-hero .program-hero-art>img,.home-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 18%)}
   .program-photo-label{left:18px;bottom:22px;font-size:9px}
   .program-statement>.shell{flex-direction:column;align-items:flex-start;gap:12px}
   .program-principles{padding-top:38px}
@@ -406,4 +421,30 @@ footer{background:#080a0b;color:#fff;border-top:1px solid rgba(255,255,255,.08)}
   .program-cta{padding:48px 0}
   .program-cta>.shell{flex-direction:column;align-items:flex-start;gap:26px}
   .program-cta h2{font-size:40px}
+}
+
+.owner-card{padding:0;gap:24px;overflow:hidden}
+.owner-card>img{width:180px;max-width:42%;height:auto;aspect-ratio:1;object-fit:cover;flex-shrink:0}
+.owner-card>div{padding:20px 20px 20px 0}
+.owner-profile{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:start;margin:32px 0}
+.owner-profile>img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-bottom:3px solid var(--red)}
+.owner-profile h3{margin-top:0}
+.owner-profile p:last-child{margin-bottom:0}
+@media(max-width:640px){
+  .owner-card{gap:16px}
+  .owner-card>img{width:140px}
+  .owner-card h3{font-size:18px}
+  .owner-profile{grid-template-columns:1fr;gap:20px}
+  .owner-profile>img{max-width:260px}
+}
+
+.parents-hero{grid-template-columns:minmax(320px,1fr) minmax(0,2fr)}
+.parents-hero .program-hero-copy{padding-right:26px}
+.parents-hero .program-hero-art{background:var(--black)}
+.parents-hero .program-hero-art>img{filter:none;mask-image:linear-gradient(to right,transparent,#000 20%)}
+.parents-hero .program-hero-art::after{background:linear-gradient(180deg,transparent 80%,rgba(0,0,0,.35))}
+@media(max-width:640px){
+  .parents-hero{grid-template-columns:1fr}
+  .parents-hero .program-hero-art{min-height:0;aspect-ratio:3/2}
+  .parents-hero .program-hero-art>img{mask-image:linear-gradient(to bottom,transparent,#000 18%)}
 }

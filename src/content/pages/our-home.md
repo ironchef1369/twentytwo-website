@@ -1,6 +1,6 @@
 ---
 title: Our home
-headline: "A home court. A place to grow."
+headline: "Our court. Your growth."
 kicker: OC Hoop Legends / Lake Forest
 summary: "TwentyTwo trains at OC Hoop Legends in Lake Forest, a dedicated basketball environment where players can put in the work and families can connect."
 image: /assets/home-court.jpg
