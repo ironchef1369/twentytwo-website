@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const formEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT;
+const directionsUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("22600 Lambert Street 1201F Lake Forest, CA 92630");
+---
+
+<BaseLayout title="Contact | Team TwentyTwo" description="Get in touch with Team TwentyTwo. Find our Lake Forest location, call 949-910-2063, or ask about the program.">
+  <main class="contact-page">
+    <header class="contact-hero">
+      <div class="shell contact-hero-inner">
+        <div>
+          <div class="kicker">/ CONTACT TWENTYTWO</div>
+          <h1>LET’S TALK.<br /><span>LET’S GROW.</span></h1>
+          <p>Have a question about the program, training, or your player’s next step? We’re here to help.</p>
+        </div>
+        <div class="contact-hero-photo">
+          <img src="/assets/contact-program-team.png" alt="Two Team TwentyTwo staff members smiling together courtside" width="1708" height="2272" fetchpriority="high" />
+          <span>YOUR NEXT CHAPTER STARTS HERE.</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="contact-section light" aria-label="Contact details and inquiry form">
+      <div class="shell contact-grid">
+        <aside class="contact-details">
+          <div class="kicker">/ CONNECT WITH US</div>
+          <h2 class="section-heading">ON THE COURT.<br />IN YOUR CORNER.</h2>
+          <p>From your first question to your next season, let’s find the right next step together.</p>
+          <div class="contact-detail">
+            <h3><span>01</span> OUR HOME</h3>
+            <address>22600 Lambert Street 1201F<br />Lake Forest, CA 92630</address>
+            <a class="contact-text-link" href={directionsUrl} target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact-detail">
+            <h3><span>02</span> GIVE US A CALL</h3>
+            <a class="contact-phone" href="tel:+19499102063">949-910-2063</a>
+          </div>
+          <div class="contact-signoff">BETTER PLAYERS.<br />BETTER PEOPLE.</div>
+        </aside>
+
+        <div class="contact-form-panel">
+          <div class="kicker">/ START THE CONVERSATION</div>
+          <h2>SEND US A MESSAGE</h2>
+          <p>Tell us a little about yourself and how we can help.</p>
+          <form id="contact-form" action={formEndpoint || "mailto:jennifer.holmes@twentytwobasketball.com"} method="post" enctype={formEndpoint ? undefined : "text/plain"} data-configured={Boolean(formEndpoint)}>
+            <div class="contact-fields">
+              <div class="contact-field"><label for="contact-first-name">First name <span aria-hidden="true">*</span></label><input id="contact-first-name" name="firstName" autocomplete="given-name" required maxlength="80" /></div>
+              <div class="contact-field"><label for="contact-last-name">Last name <span aria-hidden="true">*</span></label><input id="contact-last-name" name="lastName" autocomplete="family-name" required maxlength="80" /></div>
+              <div class="contact-field"><label for="contact-email">Email address <span aria-hidden="true">*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" /></div>
+              <div class="contact-field"><label for="contact-phone">Phone number <span class="contact-optional">(optional)</span></label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" /></div>
+              <div class="contact-field contact-field-wide"><label for="contact-topic">What can we help with? <span aria-hidden="true">*</span></label><select id="contact-topic" name="topic" required><option value="" disabled selected>Select a topic</option><option>Joining the program / tryouts</option><option>Training and player development</option><option>Current player / family question</option><option>General inquiry</option></select></div>
+              <div class="contact-field contact-field-wide"><label for="contact-message">Your message <span aria-hidden="true">*</span></label><textarea id="contact-message" name="message" rows="5" placeholder="How can we help?" required maxlength="5000"></textarea></div>
+            </div>
+            <div class="contact-form-bottom"><span>Fields marked * are required.</span><button class="button red" type="submit">Send message <span aria-hidden="true">→</span></button></div>
+            {!formEndpoint && <p class="contact-preview-note">Opens a draft in your email app. Send it to complete your inquiry. You can also email <a href="mailto:jennifer.holmes@twentytwobasketball.com">jennifer.holmes@twentytwobasketball.com</a> directly.</p>}
+            <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+  form?.addEventListener("submit", (event) => {
+    if (form.dataset.configured === "true") return;
+    event.preventDefault();
+    const data = new FormData(form);
+    const subject = `Team TwentyTwo inquiry: ${data.get("topic")}`;
+    const body = `Name: ${data.get("firstName")} ${data.get("lastName")}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone") || "Not provided"}\nTopic: ${data.get("topic")}\n\n${data.get("message")}`;
+    window.location.href = `mailto:jennifer.holmes@twentytwobasketball.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const status = document.querySelector<HTMLParagraphElement>("#contact-form-status");
+    if (status) {
+      status.hidden = false;
+      status.textContent = "Your email draft is ready. Send it from your email app to complete your inquiry. If the app did not open, email jennifer.holmes@twentytwobasketball.com directly or call 949-910-2063.";
+    }
+  });
+</script>
