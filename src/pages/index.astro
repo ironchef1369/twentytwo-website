@@ -17,11 +17,14 @@ const updates = (await getCollection("updates"))
 <BaseLayout>
   <main id="top">
     <section class="hero">
-      <div class="hero-photo"></div>
+      <picture class="hero-photo">
+        <source media="(max-width: 600px)" srcset="/assets/hero-team-celebration-mobile.webp" />
+        <img src="/assets/hero-team-celebration-1920.webp" srcset="/assets/hero-team-celebration-1920.webp 1920w, /assets/hero-team-celebration-2560.webp 2560w" sizes="100vw" width="1920" height="1280" alt="Team TwentyTwo players and coaches celebrating together on the court" fetchpriority="high" />
+      </picture>
       <div class="hero-shade"></div>
       <div class="hero-inner shell">
         <div class="hero-copy">
-          <div class="eyebrow">Orange County Club Basketball <span>/</span> 7U–17U</div>
+          <div class="eyebrow">Orange County Club Basketball <span>/</span> 8U–14U</div>
           <h1>BUILD THE<br><em>PLAYER.</em><br>NOT THE HYPE.</h1>
           <p>We develop basketball players for where they're going,<br>not just where they are today.</p>
           <p class="detail">Skills. IQ. Athletic development. Character. Competition.<br>A complete basketball environment built for the long game.</p>
@@ -65,7 +68,7 @@ const updates = (await getCollection("updates"))
           <div class="kicker">/ A DIFFERENT APPROACH</div>
           <h2>A BASKETBALL<br>CAREER IS BIGGER<br>THAN ONE SEASON.</h2>
           <div class="why-copy">
-            <p>Youth basketball has become obsessed with rankings, trophies and who is ahead right now. We take a longer view. TwentyTwo develops the skills, decision-making, athleticism, discipline and confidence players need as the game gets harder — year after year.</p>
+            <p>Every player has a different starting point and a different goal. We help them build the skills, habits, and understanding to keep growing through each stage of the game.</p>
             <strong>THE GOAL ISN'T TO PEAK EARLY.<br>THE GOAL IS TO KEEP GETTING BETTER.</strong>
           </div>
         </div>
@@ -82,30 +85,30 @@ const updates = (await getCollection("updates"))
         <div class="system-head">
           <div>
             <div class="kicker red-text">/ THE TWENTYTWO WAY</div>
-            <h2>EVERYTHING A PLAYER<br>NEEDS TO DEVELOP.</h2>
+            <h2>DEVELOPMENT ON<br>AND OFF THE COURT.</h2>
           </div>
-          <p>More than a team. A complete development environment designed for the next level — whatever that looks like for your player.</p>
+          <p>Purposeful coaching. Competitive basketball. A family that supports players as they work toward their goals on and off the court.</p>
         </div>
         <div class="pillars">
           <article>
             <div class="pillar-top"><span>01</span><b>◉</b></div>
             <h3>BASKETBALL<br>DEVELOPMENT</h3>
-            <p>Fundamentals become skills.<br>Skills become reads. Reads<br>become basketball.</p>
+            <p>Build the fundamentals, basketball IQ, and confidence to make better decisions and contribute to the team.</p>
           </article>
           <article>
             <div class="pillar-top"><span>02</span><b>⇄</b></div>
             <h3>ATHLETIC<br>DEVELOPMENT</h3>
-            <p>Strength, speed, movement<br>and durability developed<br>appropriately as athletes grow.</p>
+            <p>Develop movement, strength, and speed that support a player’s growth and preparation for the game.</p>
           </article>
           <article>
             <div class="pillar-top"><span>03</span><b>♜</b></div>
             <h3>COMPETITION</h3>
-            <p>Games matter. Winning matters.<br>But competition is where<br>development gets tested.</p>
+            <p>Compete with purpose. Learn to prepare, respond to challenges, and support your teammates through every game.</p>
           </article>
           <article>
             <div class="pillar-top"><span>04</span><b>◎</b></div>
             <h3>CHARACTER</h3>
-            <p>Accountability. Coachability.<br>Resilience. Team-first basketball.<br>The habits that outlast the uniform.</p>
+            <p>Show up prepared. Listen. Take responsibility. Treat people with respect. Build habits that carry into school and life.</p>
           </article>
         </div>
       </div>
@@ -117,15 +120,15 @@ const updates = (await getCollection("updates"))
           <div class="journey-kicker-row"><div class="kicker">/ PLAYER JOURNEY</div><img class="journey-mark" src="/assets/logo-script.webp" alt="" aria-hidden="true"></div>
           <h2>ONE PROGRAM.<br>A LONGER JOURNEY.</h2>
         </div>
-        <p class="journey-intro">Different players develop at different speeds. Our job isn't to rush the process. It's to give each athlete the environment, coaching and opportunities to keep moving forward.</p>
+        <p class="journey-intro">From learning the fundamentals to taking on new challenges, we help players find opportunities that support their development. Trust the process and enjoy the journey.</p>
         <div class="path">
-          <article><span>7U–10U</span><h3>FOUNDATION</h3><p>Love the game.<br>Learn to play.</p></article>
+          <article><span>01</span><h3>FOUNDATION</h3><p>Love the game.<br>Learn to play.</p></article>
           <i>→</i>
-          <article><span>10U–13U</span><h3>DEVELOPMENT</h3><p>Skill. IQ. movement.<br>confidence.</p></article>
+          <article><span>02</span><h3>DEVELOPMENT</h3><p>Skill. IQ. Movement.<br>Confidence.</p></article>
           <i>→</i>
-          <article><span>13U–15U</span><h3>COMPETITION</h3><p>Apply skills against<br>better athletes and<br>faster decisions.</p></article>
+          <article><span>03</span><h3>COMPETITION</h3><p>Apply skills against<br>better athletes and<br>faster decisions.</p></article>
           <i>→</i>
-          <article><span>15U–17U</span><h3>PREPARATION</h3><p>Prepare for high school<br>basketball and what<br>comes next.</p></article>
+          <article><span>04</span><h3>PREPARATION</h3><p>Build habits for the<br>next challenge, on<br>and off the court.</p></article>
         </div>
       </div>
     </section>
@@ -134,7 +137,7 @@ const updates = (await getCollection("updates"))
       <div class="facility-photo"></div>
       <div class="facility-panel">
         <div class="kicker red-text">/ HOME COURT</div>
-        <h2>THIS ISN'T A GYM<br>WE RENT TWICE A WEEK.<br><em>THIS IS HOME.</em></h2>
+        <h2>OUR HOME COURT.<br><em>YOUR PLACE TO GROW.</em></h2>
         <p>TwentyTwo trains inside OC Hoop Legends, a dedicated basketball environment in Lake Forest built around player development.</p>
         <a class="button red" href="/our-home/">Explore our home <span>→</span></a>
         <div class="facility-features">
@@ -152,34 +155,30 @@ const updates = (await getCollection("updates"))
       <div class="shell">
         <div class="coaches-head">
           <div>
-            <div class="kicker">/ OUR COACHES</div>
-            <h2>COACHING MATTERS<br>MORE THAN THE LOGO<br>ON THE JERSEY.</h2>
+            <div class="kicker">/ PROGRAM OWNERS</div>
+            <h2>EXPERIENCE IN THE GAME.<br>INVESTED IN<br>YOUR PLAYER.</h2>
           </div>
           <div class="coach-copy">
-            <p>Experienced coaches. Shared development standards.<br>One philosophy from the youngest player through high school.</p>
-            <a href="#">Meet our coaches →</a>
+            <p>Founded by former Division I players Coach Brandon Holmes and Coach Jennifer Holmes, Team 22 brings years of playing, coaching, and teaching experience to young athletes in Orange County.</p>
+            <a href="/our-coaches/">Meet our coaches →</a>
           </div>
-          <div class="arrows">← &nbsp; →</div>
         </div>
         <div class="coach-grid">
-          <article class="coach-card coach-one"><div><h3>BRANDON HOLMES</h3><p>Program Director</p></div></article>
-          <article class="coach-card coach-two"><div><h3>JENN HOLMES</h3><p>Program Director</p></div></article>
-          <article class="coach-card coach-three"><div><h3>KYLE JOHNSON</h3><p>Head Coach</p></div></article>
-          <article class="coach-card coach-four"><div><h3>MARCUS DAVIS</h3><p>Assistant Coach</p></div></article>
-          <aside class="quote-card">“BETTER<br>PLAYERS.<br>BETTER<br>PEOPLE.”</aside>
+          <article class="coach-card owner-card"><img src="/assets/brandon-holmes-headshot.webp" alt="Brandon Holmes" width="800" height="800" loading="lazy" /><div><h3>BRANDON HOLMES</h3><p>Program Owner · Coach B</p></div></article>
+          <article class="coach-card owner-card"><img src="/assets/jennifer-holmes-headshot.webp" alt="Jennifer Holmes" width="800" height="800" loading="lazy" /><div><h3>JENNIFER HOLMES</h3><p>Program Owner · Coach Jenn</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="culture">
+    <section class="culture" id="culture">
       <div class="culture-photo"></div>
       <div class="culture-wash"></div>
       <div class="shell culture-grid">
         <div class="culture-copy">
           <div class="culture-kicker-row"><div class="kicker white">/ CULTURE</div><img class="culture-oval-logo" src="/assets/logo-oval.webp" alt="" aria-hidden="true"></div>
           <h2>WE ARE<br>THE CULTURE.</h2>
-          <p>Culture isn't matching uniforms or what gets posted after a win. It's how we practice. How we coach. How we compete. How we treat each other.</p>
-          <p>TwentyTwo is competitive basketball in a family-oriented environment where players are expected to work, learn, compete and become great teammates.</p>
+          <p>Our culture grows through everyday actions: showing up prepared, listening to coaches, encouraging teammates, and treating people with respect.</p>
+          <p>TwentyTwo is competitive basketball in a family-oriented environment. We help players grow as student-athletes, take pride in their team, and enjoy the journey together.</p>
           <a class="button outline compact" href="/our-story/">Our story →</a>
         </div>
         <div class="culture-values">
@@ -238,7 +237,7 @@ const updates = (await getCollection("updates"))
         <div class="final-copy">
           <div class="kicker red-text">YOUR NEXT SEASON STARTS HERE.</div>
           <h2>READY FOR WHAT'S NEXT?</h2>
-          <p>Come experience TwentyTwo and see how we develop players differently.</p>
+          <p>Meet our coaches, get to know our approach, and explore the next opportunity for your player. We look forward to welcoming your family.</p>
           <div class="actions">
             <a class="button red" href="/tryouts/">Explore tryouts</a>
             <a class="button outline" href="/parent-guidelines/">For our families</a>

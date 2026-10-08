@@ -3,8 +3,9 @@ title: The culture
 headline: "Build the player. Back the family."
 kicker: The culture
 summary: "We develop players for their basketball careers. Skills, character, and confidence grow through consistent work, meaningful competition, and families who support the whole journey."
-image: /assets/instagram/game-action.jpg
-imageAlt: TwentyTwo players competing in a basketball game
+image: /assets/culture-coach-player.webp
+imageAlt: A Team TwentyTwo coach talking with a player beside the team bench
+imagePosition: 30% 40%
 statement: "The goal is to keep getting better, season after season."
 principles:
   - title: Development with a future
@@ -21,13 +22,21 @@ Being the best 10U team can be exciting. It is one moment along a much longer ro
 
 Winning matters, and so does how we get there. We look for growth a scoreboard cannot always show: a better read, a stronger response to a mistake, a player finding his voice, or a teammate making someone else better.
 
+## Student first. Athlete second.
+
+Basketball is part of a young person's growth. We expect players to take pride in their schoolwork and carry the same responsibility into the classroom and onto the court.
+
+The discipline, communication, and leadership players learn here should serve them beyond basketball.
+
 ## Work with intention
 
 Development asks for consistent effort. Players learn to arrive ready, listen closely, practice with purpose, and take responsibility for the things they can control.
 
 We want an environment where mistakes lead to instruction and another attempt. Honest feedback and patient encouragement can exist together. So can high expectations and a genuine enjoyment of the game.
 
-## Be someone your team can count on
+## Put the team first
+
+Your contribution goes beyond points. Encourage teammates, stay engaged, and take pride in helping the whole team succeed.
 
 Character shows up in everyday decisions: how we speak to teammates, how we respond to a coach, and what we do when a game gets difficult.
 
@@ -35,8 +44,10 @@ We value coachability, accountability, resilience, and respect. Players help set
 
 ## Families belong here
 
-The family experience matters. Parents and siblings should feel part of a community, and every player should know there are people in his corner.
+The family experience matters. Parents and siblings should feel part of a community, and every player should know there are people in their corner.
 
-We ask families to support the whole team, stay steady through setbacks, and give players space to learn. A strong sideline helps create a strong environment on the court. Our shared goal is a young person who grows in confidence, character, and connection as he grows in basketball.
+We ask families to support the whole team, stay steady through setbacks, and give players space to learn. A strong sideline helps create a strong environment on the court. Our shared goal is a young person who grows in confidence, character, and connection as they grow in basketball.
+
+[Meet the coaches behind our culture →](/our-coaches/)
 
 [Read our parent guidelines →](/parent-guidelines/)

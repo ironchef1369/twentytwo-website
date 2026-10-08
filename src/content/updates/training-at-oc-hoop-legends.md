@@ -10,7 +10,7 @@ ctaLabel: Explore the facility
 ctaUrl: https://ochooplegends.com
 ---
 
-TwentyTwo trains inside OC Hoop Legends in Lake Forest. It is more than court time rented for practice—it is a basketball environment where players can work consistently and coaches can teach with purpose.
+TwentyTwo trains inside OC Hoop Legends in Lake Forest. Our home court gives players a place to grow, coaches a place to teach with purpose, and families a place to connect.
 
 The facility supports the complete development process with NBA-style hardwood, video capability, climate-controlled courts, Dr. Dish training and strength and conditioning nearby.
 
