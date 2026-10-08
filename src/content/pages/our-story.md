@@ -22,6 +22,14 @@ Team 22 was founded by Coach Brandon Holmes and Coach Jennifer Holmes. Both are 
 
 For more than 15 years, Coach B and Coach Jenn have coached youth players in Orange County and surrounding communities. Their experience includes high school coaching in the Trinity League, skills training, and youth basketball camps. Team 22 reflects their dedication to developing well-rounded student-athletes and building lasting relationships with players and families.
 
+## Watch our story
+
+<div class="story-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/wMhIJem25iM" title="Team TwentyTwo — Our story" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+[Watch on YouTube →](https://youtu.be/wMhIJem25iM)
+
 ## Why TwentyTwo
 
 Basketball gives young players a place to challenge themselves, make friends, and discover what they can do. We want that experience to lead somewhere: stronger skills, better decisions, lasting confidence, and a love of the game that keeps growing.
