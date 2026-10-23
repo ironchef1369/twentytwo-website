@@ -52,7 +52,6 @@ The coaches supporting our players for the 2026–27 season:
   <article class="coach-card"><div><h3>Lawrence Talley</h3><p>Coach LT</p></div></article>
   <article class="coach-card"><div><h3>Cedric Burns</h3><p>Coach</p></div></article>
   <article class="coach-card"><div><h3>Lawson Talley</h3><p>Coach</p></div></article>
-  <article class="coach-card"><div><h3>Ted Rhee</h3><p>Coach</p></div></article>
   <article class="coach-card"><div><h3>Kole Clark</h3><p>Coach</p></div></article>
   <article class="coach-card"><div><h3>Rahj Wren</h3><p>Coach</p></div></article>
 </div>
